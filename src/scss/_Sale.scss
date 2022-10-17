@@ -1,0 +1,35 @@
+
+.sale {
+    display: flex;
+    justify-content: center;
+    margin: 65px 0;
+    h1 {
+        font-weight: $font-weight-bold;
+    }
+    .text {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        left: 50px;
+        bottom: 100px;
+    }
+    p {
+        width: 40%;
+    }
+    .clearance {
+        background-image: url("./images/winter-clearance.svg");
+        background-repeat: no-repeat;
+        height: 560px;
+        width: 1015px;
+        position: relative;
+    }
+    
+    .new-arrivals {
+        background-image: url("./images/new-arrivals.svg");
+        background-repeat: no-repeat;
+        height: 560px;
+        width: 635px;
+        position: relative;
+       
+    }
+}

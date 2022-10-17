@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+
+$color-grey-1: #E6E6E6;
+$color-theme-orange: #FF7373;
+
+$font-family-poppins: 'Poppins', sans-serif; 
+
+$font-weight-regual: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+
+// Site width
+._container {
+    width: 1680px;
+}
+
+._center {
+    display: flex;
+    justify-content: center;
+}
+
+// icons
+
+.icon-links {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgb(183, 183, 183);
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        background-color: black;
+        color: white;
+    }
+}
+
+// Button design
+.button-theme {
+    position: relative;
+    text-align: center;
+    padding: 0.9rem 0;
+    width: 150px;
+    color: white;
+    border: none;
+    font-size: 0.8rem;
+    transition: 0.3s ease-in-out;
+    background-color: black;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-right: 3px solid white;
+        border-bottom: 3px solid white;
+        right: 8px;
+        bottom: 8px;
+        transition: 0.3s linear;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-top: 3px solid white;
+        border-left: 3px solid white;
+        top: 8px;
+        left: 8px;
+        transition: 0.3s linear;
+    }
+    &:hover::after{
+        height: calc(100% - 16px);
+        width: calc(100% - 16px);
+    }
+    &:hover::before{
+        height: calc(100% - 16px);
+        width: calc(100% - 16px);
+    }  
+    &:hover {
+        background-color: #FF7373;
+    }
+  }

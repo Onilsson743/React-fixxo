@@ -1,0 +1,24 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    background: rgb(230,230,230);
+    background: linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(245,245,245,1) 100%);
+    padding-top: 100px;  
+
+    .header-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5rem;
+
+        h1 {
+            font-weight: $font-weight-extrabold;
+            font-size: 3.5rem;
+        }
+        p {
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+    }
+}
