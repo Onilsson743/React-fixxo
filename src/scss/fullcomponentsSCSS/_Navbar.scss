@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     padding: 1rem 0;
+
     ._navbar {
         display: flex;
         justify-content: space-between;
@@ -24,6 +25,7 @@
 
             a {
             position: relative;
+            transition: 0.2s ease-in-out;
             
             &:hover {
                 color: $color-theme-orange;

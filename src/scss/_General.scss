@@ -29,6 +29,23 @@ $font-weight-extrabold: 800;
     justify-content: center;
 }
 
+// Breadcrumb
+
+.breadcrumb {
+    display: flex;
+    gap: 10px;
+
+    i {
+        margin-right: 5px;
+    }
+
+    .active {
+        color: $color-theme-orange;
+        text-decoration: none;
+    }
+
+}
+
 // icons
 
 .icon-links {
@@ -92,12 +109,12 @@ $font-weight-extrabold: 800;
 
     // Design idea from Elvin Javadov
     &:hover::after{
-        height: calc(100% - 19px);
-        width: calc(100% - 19px);
+        height: calc(100% - 16px);
+        width: calc(100% - 16px);
     }
     &:hover::before{
-        height: calc(100% - 19px);
-        width: calc(100% - 19px);
+        height: calc(100% - 16px);
+        width: calc(100% - 16px);
     }  
 
     &:hover {
@@ -142,12 +159,12 @@ $font-weight-extrabold: 800;
         transition: 0.3s linear;
     }
     &:hover::after{
-        height: calc(100% - 19px);
-        width: calc(100% - 19px);
+        height: calc(100% - 16px);
+        width: calc(100% - 16px);
     }
     &:hover::before{
-        height: calc(100% - 19px);
-        width: calc(100% - 19px);
+        height: calc(100% - 16px);
+        width: calc(100% - 16px);
     }  
     &:hover {
         background-color: $color-theme-orange;
