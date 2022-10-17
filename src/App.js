@@ -6,9 +6,12 @@ import FeaturedProducts from './components/FeaturedProducts';
 import FlashSale from './components/FlashSale';
 import SupportOptions from './components/SupportOptions';
 import FlashSaleUpper from './components/FlashSaleUpper';
-
-
-
+import FlashSaleLower from './components/FlashSaleLower';
+import FashionFlashSale from './components/FashionFlashSale';
+import ProductCardHorizontal from './components/SmallComponents/ProductCardHorizontal';
+import SortedProductsSection from './components/SortedProductsSection';
+import Support from './components/Support';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -21,7 +24,11 @@ function App() {
       <FlashSale />
       <SupportOptions />
       <FlashSaleUpper />
-      <div style={{height:'200vh'}}></div>
+      <FlashSaleLower />
+      <FashionFlashSale />
+      <SortedProductsSection />
+      <Support />
+      <Footer />
     </div>
   );
 }

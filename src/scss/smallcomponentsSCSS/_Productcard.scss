@@ -55,10 +55,18 @@
             
         }
     }
-    p {
-        color: #616365;
-    }
-    .star-rating i{
-        color: #FF7373;
+    .text-area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            color: #616365;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        h5{
+            margin-top: 8px;
+        }
     }
 }

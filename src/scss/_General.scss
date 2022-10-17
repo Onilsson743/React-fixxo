@@ -2,6 +2,7 @@
 
 
 $color-grey-1: #E6E6E6;
+$color-grey-2: #f5f5f5;
 $color-dark-grey: #BBBBBB;
 $color-theme-orange: #FF7373;
 
@@ -17,6 +18,10 @@ $font-weight-extrabold: 800;
 // Site width
 ._container {
     width: 1680px;
+}
+
+._containersmall {
+    width: 1110px;
 }
 
 ._center {
@@ -43,6 +48,11 @@ $font-weight-extrabold: 800;
         background-color: black;
         color: white;
     }
+}
+
+// Start rating colour
+.star-rating i{
+    color: #FF7373;
 }
 
 // Button design
@@ -79,14 +89,17 @@ $font-weight-extrabold: 800;
         left: 8px;
         transition: 0.3s linear;
     }
+
+    // Design idea from Elvin Javadov
     &:hover::after{
-        height: calc(100% - 16px);
-        width: calc(100% - 16px);
+        height: calc(100% - 19px);
+        width: calc(100% - 19px);
     }
     &:hover::before{
-        height: calc(100% - 16px);
-        width: calc(100% - 16px);
+        height: calc(100% - 19px);
+        width: calc(100% - 19px);
     }  
+
     &:hover {
         background-color: $color-theme-orange;
         scale: 1.1;
@@ -129,12 +142,12 @@ $font-weight-extrabold: 800;
         transition: 0.3s linear;
     }
     &:hover::after{
-        height: calc(100% - 16px);
-        width: calc(100% - 16px);
+        height: calc(100% - 19px);
+        width: calc(100% - 19px);
     }
     &:hover::before{
-        height: calc(100% - 16px);
-        width: calc(100% - 16px);
+        height: calc(100% - 19px);
+        width: calc(100% - 19px);
     }  
     &:hover {
         background-color: $color-theme-orange;

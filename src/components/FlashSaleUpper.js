@@ -5,14 +5,16 @@ import ProductCard from './SmallComponents/ProductCard'
 
 const FlashSaleUpper = () => {
   return (
-    <div>
-        <FlashSaleBig />
-        <section className='flashsaleupper'>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-        </section>
+    <div className='_center'>
+        <div className='_container flashsaleupper'>
+            <FlashSaleBig />
+            <section className='grid'>
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+            </section>
+        </div>
     </div>
   )
 }

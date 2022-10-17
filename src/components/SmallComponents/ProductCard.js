@@ -11,16 +11,18 @@ const ProductCard = () => {
             </div>
             <button class="button-theme">Quick View</button>
         </div>
-        <p>Category</p>
-        <h5>Modern Black Blouse</h5>
-        <span class="star-rating">
-            <i class="fa-sharp fa-solid fa-star"></i>
-            <i class="fa-sharp fa-solid fa-star"></i>
-            <i class="fa-sharp fa-solid fa-star"></i>
-            <i class="fa-sharp fa-solid fa-star"></i>
-            <i class="fa-sharp fa-solid fa-star"></i>
-        </span>
-        <h5>$35.00</h5>
+        <div className='text-area'>
+          <p>Category</p>
+          <h6>Modern Black Blouse</h6>
+          <span class="star-rating">
+              <i class="fa-sharp fa-solid fa-star"></i>
+              <i class="fa-sharp fa-solid fa-star"></i>
+              <i class="fa-sharp fa-solid fa-star"></i>
+              <i class="fa-sharp fa-solid fa-star"></i>
+              <i class="fa-sharp fa-solid fa-star"></i>
+          </span>
+          <h5>$35.00</h5>
+        </div>
     </div>
   )
 }
