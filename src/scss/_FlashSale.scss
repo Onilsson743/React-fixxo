@@ -1,0 +1,43 @@
+
+.flash-sale {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    h1 {
+        font-weight: $font-weight-bold;
+        line-height: 90%;
+    }
+    button {
+        margin-top: 1.8rem;
+    }
+
+    .left-section {
+        background-image: url("./images/flashsale-left.svg");
+        width: 825px;
+        height: 403px;
+        position: relative;
+
+        .left-text {
+            position: absolute;
+            bottom: 100px;
+            left: 450px;
+            color: white;
+        }
+
+    }
+    
+    .right-section {
+        background-image: url("./images/flashsale-right.svg");
+        width: 825px;
+        height: 403px;
+        position: relative;
+
+        .right-text {
+            position: absolute;
+            bottom: 100px;
+            left: 60px;
+        }
+    }
+}
+

@@ -69,6 +69,59 @@
 }
 .button-theme:hover {
   background-color: #FF7373;
+  scale: 1.1;
+  cursor: pointer;
+}
+
+.button-theme-white {
+  position: relative;
+  text-align: center;
+  padding: 0.9rem 0;
+  width: 150px;
+  color: black;
+  border: none;
+  font-size: 0.8rem;
+  transition: 0.3s ease-in-out;
+  background-color: white;
+}
+.button-theme-white::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+  right: 8px;
+  bottom: 8px;
+  transition: 0.3s linear;
+}
+.button-theme-white::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  top: 8px;
+  left: 8px;
+  transition: 0.3s linear;
+}
+.button-theme-white:hover::after {
+  height: calc(100% - 16px);
+  width: calc(100% - 16px);
+}
+.button-theme-white:hover::before {
+  height: calc(100% - 16px);
+  width: calc(100% - 16px);
+}
+.button-theme-white:hover {
+  background-color: #FF7373;
+  scale: 1.1;
+  cursor: pointer;
+}
+
+a:hover {
+  cursor: pointer;
 }
 
 .top-navbar {
@@ -206,6 +259,9 @@
 .product-card .img-window:hover .button-theme {
   opacity: 100%;
 }
+.product-card .img-window:hover .button-theme:hover {
+  scale: 1;
+}
 .product-card .img-window .icons {
   position: absolute;
   right: -40px;
@@ -251,4 +307,136 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
+}
+
+.flash-sale {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.flash-sale h1 {
+  font-weight: 700;
+  line-height: 90%;
+}
+.flash-sale button {
+  margin-top: 1.8rem;
+}
+.flash-sale .left-section {
+  background-image: url("./images/flashsale-left.svg");
+  width: 825px;
+  height: 403px;
+  position: relative;
+}
+.flash-sale .left-section .left-text {
+  position: absolute;
+  bottom: 100px;
+  left: 450px;
+  color: white;
+}
+.flash-sale .right-section {
+  background-image: url("./images/flashsale-right.svg");
+  width: 825px;
+  height: 403px;
+  position: relative;
+}
+.flash-sale .right-section .right-text {
+  position: absolute;
+  bottom: 100px;
+  left: 60px;
+}
+
+.supportoptions {
+  height: 400px;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 65px;
+}
+.supportoptions h4 {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.supportoptions .flex {
+  display: flex;
+  gap: 35px;
+}
+.supportoptions .flex .info-box {
+  display: flex;
+}
+.supportoptions .flex .info-box .left-box {
+  width: 232px;
+  height: 232px;
+  background-color: white;
+  position: relative;
+}
+.supportoptions .flex .info-box .left-box .text {
+  position: absolute;
+  height: 100%;
+  left: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.supportoptions .flex .info-box .left-box .text p {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 70%;
+}
+.supportoptions .flex .info-box .left-box .text a {
+  margin-top: 0.8rem;
+  font-weight: 600;
+  position: relative;
+  width: 100px;
+  transition: 0.2s ease-in-out;
+}
+.supportoptions .flex .info-box .left-box .text a::before {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  transform: rotate(45deg);
+  right: 8px;
+  top: 8px;
+  transition: 0.2s ease-in-out;
+}
+.supportoptions .flex .info-box .left-box .text a::after {
+  content: "";
+  position: absolute;
+  width: 93px;
+  height: 2px;
+  background-color: black;
+  bottom: 0;
+  left: 0;
+  transition: 0.2s ease-in-out;
+}
+.supportoptions .flex .info-box .left-box .text a:hover {
+  color: #FF7373;
+  scale: 1.1;
+}
+.supportoptions .flex .info-box .left-box .text a:hover::before {
+  border-top: 2px solid #FF7373;
+  border-right: 2px solid #FF7373;
+}
+.supportoptions .flex .info-box .left-box .text a:hover::after {
+  background-color: #FF7373;
+}
+.supportoptions .flex .info-box .right-box {
+  height: 232px;
+  width: 232px;
+  background-color: #BBBBBB;
+}
+
+.flashsalebig {
+  height: 665px;
+  width: 825px;
+  background-color: #BBBBBB;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }/*# sourceMappingURL=App.css.map */

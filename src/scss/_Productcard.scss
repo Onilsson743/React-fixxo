@@ -20,6 +20,10 @@
             }
             .button-theme {
                 opacity: 100%;
+                
+                &:hover {
+                    scale: 1;
+                }
             }
         }
         
