@@ -1,8 +1,28 @@
-import React from 'react'
+import { useRef } from 'react';
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 
 const Contact = () => {
+   
+    const nameRef = useRef();
+    const mailRef = useRef();
+    const textRef = useRef();
+
+    // const [values, setValues] = useState ({
+    //     name:"",
+    //     mail:"",
+    //     comment:""
+    // })
+
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const data = new FormData(e.target);
+        console.log(Object.fromEntries(data.entries()));
+    }
+    
   return (
     <div className='contact'>
         <Navbar />
@@ -18,10 +38,10 @@ const Contact = () => {
         <section className='_center'>
             <div className='form _containersmall'>
                 <h5>Come in Contact with Us</h5>
-                <form>
-                    <input type="text" id="name" placeholder='Your Name'></input>
-                    <input type="text" id="mail" placeholder='Your Mail'></input>
-                    <textarea id='comment' placeholder='Comment'></textarea>
+                <form onSubmit={handleSubmit}>
+                    <input type="text" name="name" id="name" placeholder='Your Name' ref={nameRef}></input>
+                    <input type="email" name='mail' id="mail" placeholder='Your Mail' ref={mailRef} ></input>
+                    <textarea id='comment' name='comment' placeholder='Comment' ref={textRef}></textarea>
                     <button type='submit' className='button-theme'>Post Comment</button>
                 </form>
             </div>
