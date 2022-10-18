@@ -8,12 +8,12 @@ const ProductCardHorizontal = () => {
             <p>Category</p>
             <h6>Modern Black </h6>
             <h6>Blouse</h6>
-            <span class="star-rating">
-                <i class="fa-sharp fa-solid fa-star"></i>
-                <i class="fa-sharp fa-solid fa-star"></i>
-                <i class="fa-sharp fa-solid fa-star"></i>
-                <i class="fa-sharp fa-solid fa-star"></i>
-                <i class="fa-sharp fa-solid fa-star"></i>
+            <span className="star-rating">
+                <i className="fa-sharp fa-solid fa-star"></i>
+                <i className="fa-sharp fa-solid fa-star"></i>
+                <i className="fa-sharp fa-solid fa-star"></i>
+                <i className="fa-sharp fa-solid fa-star"></i>
+                <i className="fa-sharp fa-solid fa-star"></i>
             </span>
             <h5>$35.00</h5>
         </section>
