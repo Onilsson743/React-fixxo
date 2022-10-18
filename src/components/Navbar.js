@@ -1,5 +1,9 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import Logo from '../images/logo.svg'
+import IconLinks from './SmallComponents/IconLinks'
+
+
 
 const Navbar = () => {
   return (
@@ -9,17 +13,17 @@ const Navbar = () => {
           <img src={Logo} />
         </section>
         <section className='navbar-menu'>
-          <a>Home</a>
-          <a>Categories</a>
-          <a>Products</a>
-          <a>Contacts</a>
+          <NavLink className='navbar-link' to='/' end>Home</NavLink>
+          <NavLink className='navbar-link' to='/Categories' end>Categories</NavLink>
+          <NavLink className='navbar-link' to='/Products' end>Products</NavLink>
+          <NavLink className='navbar-link' to='/contacts' end>Contacts</NavLink>
         </section>
         <section className='navbar-icons'>
-          <a className="icon-links" href="#"><i className="fa-regular fa-magnifying-glass"></i></a>
-          <a className="icon-links" href="#"><i className="fa-regular fa-arrows-repeat"></i></a>
-          <a className="icon-links" href="#"><i className="fa-regular fa-heart"></i></a>
-          <a className="icon-links" href="#"><i className="fa-regular fa-bag-shopping"></i></a>
-        </section>
+          <IconLinks link = "/serch" icon = "fa-regular fa-magnifying-glass" />
+          <IconLinks link = "/serch" icon = "fa-regular fa-arrows-repeat" />
+          <IconLinks link = "/serch" icon = "fa-regular fa-heart" number={"10"} />
+          <IconLinks link = "/serch" icon = "fa-regular fa-bag-shopping" number={"99+"} />
+          </section>
       </div>
     </div>
   )

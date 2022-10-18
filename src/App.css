@@ -19,7 +19,8 @@
 .breadcrumb i {
   margin-right: 5px;
 }
-.breadcrumb .active {
+
+.active {
   color: #FF7373;
   text-decoration: none;
 }
@@ -168,14 +169,16 @@ a:hover {
   align-items: center;
   font-weight: 500;
 }
-.top-navbar ._navbar .navbar-menu a {
+.top-navbar ._navbar .navbar-menu .navbar-link {
   position: relative;
   transition: 0.2s ease-in-out;
+  color: black;
+  text-decoration: none;
 }
-.top-navbar ._navbar .navbar-menu a:hover {
+.top-navbar ._navbar .navbar-menu .navbar-link:hover {
   color: #FF7373;
 }
-.top-navbar ._navbar .navbar-menu a::before {
+.top-navbar ._navbar .navbar-menu .navbar-link::before {
   content: "";
   position: absolute;
   height: 2px;
@@ -186,9 +189,12 @@ a:hover {
   transition: transform 0.3s linear;
   transform-origin: right;
 }
-.top-navbar ._navbar .navbar-menu a:hover::before {
+.top-navbar ._navbar .navbar-menu .navbar-link:hover::before {
   transform: scaleX(1);
   transform-origin: left;
+}
+.top-navbar ._navbar .navbar-menu .active {
+  color: #FF7373;
 }
 .top-navbar ._navbar .navbar-icons {
   list-style: none;
@@ -197,8 +203,12 @@ a:hover {
   flex: 1;
   gap: 1.5rem;
 }
+.top-navbar ._navbar .navbar-icons a {
+  position: relative;
+}
 .top-navbar ._navbar .navbar-icons a:hover {
   box-shadow: 0 0 4px black;
+  scale: 1.1;
 }
 
 .header {

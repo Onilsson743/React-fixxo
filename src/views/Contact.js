@@ -39,9 +39,9 @@ const Contact = () => {
             <div className='form _containersmall'>
                 <h5>Come in Contact with Us</h5>
                 <form onSubmit={handleSubmit}>
-                    <input type="text" name="name" id="name" placeholder='Your Name' ref={nameRef}></input>
-                    <input type="email" name='mail' id="mail" placeholder='Your Mail' ref={mailRef} ></input>
-                    <textarea id='comment' name='comment' placeholder='Comment' ref={textRef}></textarea>
+                    <input type="text" name="name" id="name" placeholder='Your Name' ref={nameRef} required></input>
+                    <input type="email" name='mail' id="mail" placeholder='Your Mail' ref={mailRef} required></input>
+                    <textarea id='comment' name='comment' placeholder='Comment' ref={textRef} required></textarea>
                     <button type='submit' className='button-theme'>Post Comment</button>
                 </form>
             </div>
