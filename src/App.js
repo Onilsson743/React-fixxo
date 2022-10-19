@@ -5,6 +5,7 @@ import Home from './views/Home';
 import NotFound from './views/NotFound';
 import Categories from './views/Categories';
 import Products from './views/Products';
+import FullProduct from './views/FullProductView';
 
 
 
@@ -16,7 +17,7 @@ function App() {
         <Route path='*' element={<NotFound />} />
         <Route path='/contacts' element={<Contact />} />
         <Route path='/categories' element={<Categories /> } />
-        <Route path='/products' element={<Products />} />
+        <Route path='/products' element={<FullProduct /> } />
       </Routes>
       
       

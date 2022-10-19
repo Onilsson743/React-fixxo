@@ -1,0 +1,34 @@
+.imagepreview {
+    width: 540px;
+    height: 610px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .fullsizeimg {
+        width: 100%;
+        height: 445px;
+        overflow: hidden;
+
+        .mySlides {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .images {
+        display: flex;
+        justify-content: space-between;
+        
+        .img {
+            width: 160px;
+            height: 130px;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
