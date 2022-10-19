@@ -1,9 +1,25 @@
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     background: rgb(230,230,230);
     background: linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(245,245,245,1) 100%);
     padding-top: 100px;  
+    position: relative;
+    overflow: hidden;
+
+    #headerleftimg {
+        position: absolute;
+        width: 150px;
+        z-index: 0;
+        left: 2rem;
+    }
+    #headerrightimg {
+        position: absolute;
+        width: 150px;
+        z-index: 0;
+        right: 2rem;
+    }
 
     .header-text {
         display: flex;
@@ -11,10 +27,12 @@
         justify-content: center;
         align-items: center;
         margin-bottom: 5rem;
+        z-index: 1;
 
         h1 {
             font-weight: $font-weight-extrabold;
             font-size: 3.5rem;
+            
         }
         p {
             margin-top: 1.5rem;

@@ -13,7 +13,6 @@ const Support = () => {
                 </div>
                 <h6>Customer Support</h6>
                 <p>Village did removed enjoyed explain talking.</p>
-                
             </div>
             <div className='information'>
                 <div className='img-box'>

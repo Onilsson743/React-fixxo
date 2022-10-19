@@ -1,10 +1,13 @@
 .top-navbar { 
-    z-index: 1;
-    background: rgb(230,230,230);
+    transition: 0.3s ease-in-out;
+    z-index: 5;
+    position: sticky;
+    top: 0;
     background: linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(245,245,245,1) 100%);
     display: flex;
     justify-content: center;
     padding: 1rem 0;
+    transition: 0.3s ease-in-out;
 
     ._navbar {
         display: flex;
@@ -73,4 +76,11 @@
             
         }
     }
+}
+
+
+.navbar-white {
+    transition: 0.3s ease-in-out;
+    background: white !important;
+    
 }

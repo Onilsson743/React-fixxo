@@ -6,8 +6,27 @@ import IconLinks from './SmallComponents/IconLinks'
 
 
 const Navbar = () => {
+
+  const scrollpos = () => {
+    let scrollposition = window.scrollY;
+    const navbar = document.getElementById('navbar');
+    if (scrollposition > 950) {
+      navbar.classList.add("navbar-white");
+    } else {
+      navbar.classList.remove("navbar-white")
+    }
+    console.log(scrollposition);
+  }
+
+  setInterval(scrollpos, 10)
+  
+
+
+
+  
+
   return (
-    <div className='top-navbar'>
+    <div id='navbar' className='top-navbar '>
       <div className='_container _navbar'>
         <section className='logo'>
           <img src={Logo} />
