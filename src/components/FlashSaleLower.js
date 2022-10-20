@@ -7,10 +7,10 @@ const FlashSaleLower = () => {
     <div className='_center'>
         <div className='flashsalelower _container'>
             <section className='grid'>
+                {/* <ProductCard />
                 <ProductCard />
                 <ProductCard />
-                <ProductCard />
-                <ProductCard />
+                <ProductCard /> */}
             </section>
             <FlashSaleBig />
         </div>

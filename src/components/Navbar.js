@@ -7,18 +7,18 @@ import IconLinks from './SmallComponents/IconLinks'
 
 const Navbar = () => {
 
-  const scrollpos = () => {
-    let scrollposition = window.scrollY;
-    const navbar = document.getElementById('navbar');
-    if (scrollposition > 950) {
-      navbar.classList.add("navbar-white");
-    } else {
-      navbar.classList.remove("navbar-white")
-    }
-    console.log(scrollposition);
-  }
+  // const scrollpos = () => {
+  //   let scrollposition = window.scrollY;
+  //   const navbar = document.getElementById('navbar');
+  //   if (scrollposition > 950) {
+  //     navbar.classList.add("navbar-white");
+  //   } else {
+  //     navbar.classList.remove("navbar-white")
+  //   }
+  //   console.log(scrollposition);
+  // }
 
-  setInterval(scrollpos, 10)
+  // setInterval(scrollpos, 1000)
   
 
 

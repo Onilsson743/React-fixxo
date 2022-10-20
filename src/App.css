@@ -188,12 +188,23 @@ a:hover {
   width: 255px;
 }
 .product-card .img-window {
-  width: 100%;
+  width: 255px;
   height: 210px;
   background-color: #E6E6E6;
   position: relative;
   transition: 0.3s ease-in-out;
   overflow: hidden;
+  position: relative;
+}
+.product-card .img-window img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.product-card .img-window .button-theme {
+  position: absolute;
+  left: 0;
 }
 .product-card .img-window:hover {
   background-color: #CDCED0;

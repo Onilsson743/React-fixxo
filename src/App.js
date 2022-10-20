@@ -4,7 +4,6 @@ import Contact from './views/Contact';
 import Home from './views/Home';
 import NotFound from './views/NotFound';
 import Categories from './views/Categories';
-import Products from './views/Products';
 import FullProduct from './views/FullProductView';
 
 

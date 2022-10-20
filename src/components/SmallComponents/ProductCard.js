@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-const ProductCard = () => {
+
+const ProductCard = ({item}) => {
+
+  console.log(item)
   return (
     <div className="product-card">
         <div className="img-window">
+            <img src={item.imgUrl} />
             <div className="icons">
                 <a className="icon-links"><i className="fa-regular fa-code-compare"></i></a>
                 <a className="icon-links"><i className="fa-regular fa-heart"></i></a>
@@ -12,8 +16,8 @@ const ProductCard = () => {
             <button className="button-theme">Quick View</button>
         </div>
         <div className='text-area'>
-          <p>Category</p>
-          <h6>Modern Black Blouse</h6>
+          <p>{item.category}</p>
+          <h6>{item.productName}</h6>
           <span className="star-rating">
               <i className="fa-sharp fa-solid fa-star"></i>
               <i className="fa-sharp fa-solid fa-star"></i>
@@ -21,7 +25,7 @@ const ProductCard = () => {
               <i className="fa-sharp fa-solid fa-star"></i>
               <i className="fa-sharp fa-solid fa-star"></i>
           </span>
-          <h5>$35.00</h5>
+          <h5>${item.price}</h5>
         </div>
     </div>
   )
