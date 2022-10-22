@@ -1,14 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+}
+
 ._containersmall {
   width: 1110px;
 }
 
 ._container {
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
   width: 100%;
-  padding-right: calc(var(--bs-gutter-x) * 0.5);
-  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
   margin-right: auto;
   margin-left: auto;
 }
@@ -46,6 +48,7 @@
 ._center {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .breadcrumb {
@@ -344,9 +347,13 @@ a:hover {
 .top-navbar ._navbar .logo {
   flex: 1;
 }
+.top-navbar ._navbar .logo h1 {
+  font-weight: 700;
+  font-size: 2.2rem;
+}
 .top-navbar ._navbar .navbar-menu {
   flex: 1;
-  display: flex;
+  display: none;
   gap: 1.5rem;
   justify-content: center;
   align-items: center;
@@ -381,8 +388,8 @@ a:hover {
 }
 .top-navbar ._navbar .navbar-icons {
   list-style: none;
-  display: flex;
   justify-content: end;
+  display: none;
   flex: 1;
   gap: 1.5rem;
 }
@@ -392,6 +399,14 @@ a:hover {
 .top-navbar ._navbar .navbar-icons a:hover {
   box-shadow: 0 0 4px black;
   scale: 1.1;
+}
+
+.display-flex {
+  display: flex !important;
+}
+
+display-none {
+  display: none !important;
 }
 
 .navbar-white {
@@ -484,8 +499,12 @@ a:hover {
 .featured-products .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
+}
+@media (min-width: 768px) {
+  .featured-products .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .flash-sale {
@@ -665,6 +684,7 @@ a:hover {
 
 .sortedproductsection {
   display: flex;
+  flex-direction: column;
   gap: 50px;
   padding-bottom: 65px;
   border-bottom: 1px solid #707070;

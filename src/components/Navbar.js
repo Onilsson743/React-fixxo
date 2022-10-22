@@ -21,7 +21,9 @@ const Navbar = () => {
   // setInterval(scrollpos, 1000)
   
 
-
+  document.getElementById("test").addEventListener("click", display(){
+    document.getElementById("navbardropdown").classlist.add("display-flex")
+  });
 
   
 
@@ -29,7 +31,7 @@ const Navbar = () => {
     <div id='navbar' className='top-navbar '>
       <div className='_container _navbar'>
         <section className='logo'>
-          <img src={Logo} />
+          <h1>Fixxo.</h1>
         </section>
         <section className='navbar-menu'>
           <NavLink className='navbar-link' to='/' end>Home</NavLink>
@@ -37,12 +39,14 @@ const Navbar = () => {
           <NavLink className='navbar-link' to='/Products' end>Products</NavLink>
           <NavLink className='navbar-link' to='/contacts' end>Contacts</NavLink>
         </section>
-        <section className='navbar-icons'>
+        <section id="navbardropdown" className='navbar-icons display-flex'>
           <IconLinks link = "/serch" icon = "fa-regular fa-magnifying-glass" />
           <IconLinks link = "/serch" icon = "fa-regular fa-arrows-repeat" />
           <IconLinks link = "/serch" icon = "fa-regular fa-heart" number={"10"} />
           <IconLinks link = "/serch" icon = "fa-regular fa-bag-shopping" number={"99+"} />
-          </section>
+          
+        </section>
+        <IconLinks id="test" icon = "fa-solid fa-bars"  />
       </div>
     </div>
   )

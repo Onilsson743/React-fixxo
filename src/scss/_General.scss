@@ -22,6 +22,9 @@ $font-weight-semibold: 600;
 $font-weight-bold: 700;
 $font-weight-extrabold: 800;
 
+body {
+    font-family: $font-family-poppins;
+}
 
 // Site width
 // ._container {
@@ -33,11 +36,11 @@ $font-weight-extrabold: 800;
 }
 
 ._container {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
+    $bs-gutter-x: 1.5rem;
+    $bs-gutter-y: 0;
     width: 100%;
-    padding-right: calc(var(--bs-gutter-x) * 0.5);
-    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    padding-right: calc(($bs-gutter-x) * 0.5);
+    padding-left: calc(($bs-gutter-x) * 0.5);
     margin-right: auto;
     margin-left: auto;
 }
@@ -77,6 +80,7 @@ $font-weight-extrabold: 800;
 ._center {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 // Breadcrumb

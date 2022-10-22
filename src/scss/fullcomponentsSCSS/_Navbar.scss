@@ -16,11 +16,16 @@
     
         .logo {
             flex: 1;
+
+            h1 {
+                font-weight: $font-weight-bold;
+                font-size: 2.2rem;
+            }
         }
 
         .navbar-menu {
             flex: 1;
-            display: flex;
+            display: none;
             gap: 1.5rem;
             justify-content: center;
             align-items: center;
@@ -59,8 +64,8 @@
 
         .navbar-icons {
             list-style: none;
-            display: flex;
             justify-content: end;
+            display: none;
             flex: 1;
             gap: 1.5rem;
             
@@ -76,6 +81,13 @@
             
         }
     }
+}
+
+.display-flex {
+    display: flex !important;
+}
+display-none {
+    display: none !important;
 }
 
 

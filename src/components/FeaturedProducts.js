@@ -25,15 +25,6 @@ const FeaturedProducts = () => {
           {
             products.map(product => <ProductCard key={product.id} item={product} />)
           }
-
-            {/* <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard /> */}
         </div>
     </section>
   )
