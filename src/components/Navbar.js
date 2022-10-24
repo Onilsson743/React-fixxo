@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import Logo from '../images/logo.svg'
 import IconLinks from './SmallComponents/IconLinks'
@@ -7,23 +7,30 @@ import IconLinks from './SmallComponents/IconLinks'
 
 const Navbar = () => {
 
-  // const scrollpos = () => {
-  //   let scrollposition = window.scrollY;
-  //   const navbar = document.getElementById('navbar');
-  //   if (scrollposition > 950) {
-  //     navbar.classList.add("navbar-white");
-  //   } else {
-  //     navbar.classList.remove("navbar-white")
-  //   }
-  //   console.log(scrollposition);
-  // }
+  const scrollpos = () => {
+    let scrollposition = window.scrollY;
+    const navbar = document.getElementById('navbar');
+    if (scrollposition > 950) {
+      navbar.classList.add("navbar-white");
+    } else {
+      navbar.classList.remove("navbar-white")
+    }
+    console.log(scrollposition);
+  }
 
-  // setInterval(scrollpos, 1000)
+  setInterval(scrollpos, 1000)
   
+  const [showMenu, setShowMenu] = useState(false);
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
 
-  document.getElementById("test").addEventListener("click", display(){
-    document.getElementById("navbardropdown").classlist.add("display-flex")
-  });
+  }
+
+
+  // document.getElementById('knapp').addEventListener('click', () => {
+  //   document.querySelector()
+  // })
+
 
   
 
@@ -33,20 +40,21 @@ const Navbar = () => {
         <section className='logo'>
           <h1>Fixxo.</h1>
         </section>
-        <section className='navbar-menu'>
+        <section  className={`navbar-menu ${!showMenu ? "d-none" : ""}`}>
           <NavLink className='navbar-link' to='/' end>Home</NavLink>
           <NavLink className='navbar-link' to='/Categories' end>Categories</NavLink>
           <NavLink className='navbar-link' to='/Products' end>Products</NavLink>
           <NavLink className='navbar-link' to='/contacts' end>Contacts</NavLink>
         </section>
-        <section id="navbardropdown" className='navbar-icons display-flex'>
-          <IconLinks link = "/serch" icon = "fa-regular fa-magnifying-glass" />
-          <IconLinks link = "/serch" icon = "fa-regular fa-arrows-repeat" />
+        <section className='navbar-icons'>
+          <IconLinks hideMobile = {true} link = "/serch" icon = "fa-regular fa-magnifying-glass" />
+          <IconLinks hideMobile = {true} link = "/serch" icon = "fa-regular fa-arrows-repeat" />
           <IconLinks link = "/serch" icon = "fa-regular fa-heart" number={"10"} />
           <IconLinks link = "/serch" icon = "fa-regular fa-bag-shopping" number={"99+"} />
-          
+
+          <button id='knapp' className='icon-links' onClick={toggleMenu}><i class="fa-solid fa-bars"></i></button>
         </section>
-        <IconLinks id="test" icon = "fa-solid fa-bars"  />
+        
       </div>
     </div>
   )
