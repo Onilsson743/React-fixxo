@@ -22,8 +22,11 @@ $font-weight-semibold: 600;
 $font-weight-bold: 700;
 $font-weight-extrabold: 800;
 
-body {
+#root {
     font-family: $font-family-poppins;
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
 // Site width
@@ -95,7 +98,7 @@ body {
 }
 
 .active {
-    color: $color-theme-orange;
+    color: $color-theme-orange !important;
     text-decoration: none;
 }
 
@@ -113,12 +116,10 @@ body {
     border-radius: 50%;
     box-shadow: 0 0 5px rgb(183, 183, 183);
     transition: 0.3s ease-in-out;
-    transition: transform 0.5s ease-in-out;
 
     &:hover {
         background-color: black;
         color: white;
-        transform: rotateY(180deg);
     }
 
 }

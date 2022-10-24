@@ -17,7 +17,7 @@ const Home = () => {
     <div>
         <Navbar />
         <Header />
-        <Sale />
+        {/* <Sale /> */}
         <FeaturedProducts />
         <FlashSale />
         <SupportOptions />
