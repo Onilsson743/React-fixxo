@@ -23,6 +23,10 @@
             font-weight: $font-weight-extrabold;
             font-size: 2.5rem;
         }
+        p {
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
     }
 }
 
@@ -43,38 +47,3 @@
         }
     }
 }
-
-//     #headerleftimg {
-//         position: absolute;
-//         display: none;
-//         width: 150px;
-//         z-index: 0;
-//         left: 2rem;
-//     }
-//     #headerrightimg {
-//         position: absolute;
-//         display: none;
-//         width: 150px;
-//         z-index: 0;
-//         right: 2rem;
-//     }
-
-//     .header-text {
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: center;
-//         align-items: center;
-//         margin-bottom: 5rem;
-//         z-index: 1;
-
-//         h1 {
-//             font-weight: $font-weight-extrabold;
-//             font-size: 3.5rem;
-            
-//         }
-//         p {
-//             margin-top: 1.5rem;
-//             margin-bottom: 2rem;
-//         }
-//     }
-// }

@@ -21,7 +21,7 @@ const Navbar = () => {
   // setInterval(scrollpos, 1000)
   
 
-  const [showMenu, setShowMenu] = useState(true);
+  const [showMenu, setShowMenu] = useState(false);
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   }
@@ -35,7 +35,7 @@ const Navbar = () => {
         
         <h1 className='logo'>Fixxo.</h1>
         
-        <section className={`navbar-menu ${!showMenu ? "display" : ""}`} >
+        <section className={`navbar-menu ${showMenu ? "display" : ""}`} >
           <NavLink className='navbar-link' to='/' end>Home</NavLink>
           <NavLink className='navbar-link' to='/Categories' end>Categories</NavLink>
           <NavLink className='navbar-link' to='/Products' end>Products</NavLink>
@@ -47,7 +47,7 @@ const Navbar = () => {
           <IconLinks hideMobile = {true} link = "/serch" icon = "fa-regular fa-arrows-repeat" />
           <IconLinks hideMobile = {true} link = "/serch" icon = "fa-regular fa-heart" number={"10"} />
           <IconLinks link = "/serch" icon = "fa-regular fa-bag-shopping" number={"99+"} />
-          <button className={`mobile-menu ${!showMenu ? "mobile-menu-open" : ""}`} onClick={toggleMenu}></button>
+          <button className={`mobile-menu ${showMenu ? "mobile-menu-open" : ""}`} onClick={toggleMenu}></button>
         </section>
 
         

@@ -29,13 +29,9 @@ $font-weight-extrabold: 800;
     overflow: hidden;
 }
 
-// Site width
-// ._container {
-//     width: 1680px;
-// }
 
 ._containersmall {
-    width: 1110px;
+    max-width: 1110px;
 }
 
 ._container {

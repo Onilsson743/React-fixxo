@@ -1,8 +1,10 @@
 .featured-products {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     margin-bottom: 35px;
+    
     
     h4 {
         font-weight: $font-weight-bold;
@@ -10,14 +12,10 @@
     }
 
     .grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-        
-    }
-    @media (min-width: $width-s) {
-        .grid {
-            grid-template-columns: repeat(3, 1fr);
-        }  
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        max-width: 1200px;       
     }
 }

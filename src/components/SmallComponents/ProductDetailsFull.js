@@ -1,7 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const ProductDetailsFull = () => {
-  return (
+
+    const [amount, setAmount] = useState(0);
+
+    const increase = (e) => {
+        e.preventDefault();
+        setAmount(amount + 1);
+    }
+    const decrease = (e) => {
+        e.preventDefault();
+        setAmount(amount - 1);
+    }
+
+
+return (
     <div>
         <h1>Titel</h1>
         <p><span>ID</span> <span>Brand</span></p>
@@ -20,7 +33,7 @@ const ProductDetailsFull = () => {
             </span>
             <span>
                 <h2>Qty:</h2>
-                <button>quantity selector</button>
+                <section><button onClick={decrease}>-</button><span>{amount}</span><button onClick={increase}>+</button></section>
                 <button className='button-theme'>ADD TO CART</button>
             </span>
         </form>
