@@ -17,11 +17,11 @@ const Form = () => {
     // const usernameRef = useRef();
 
     const [values,setValues] = useState({
-        Fullname:"",
-        Email:"",
-        Comment:"",
+        Fullname:'',
+        Email:'',
+        Comment:'',
     })
-    
+    const regexmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     const inputs = [
         {
             id:1,
@@ -39,8 +39,8 @@ const Form = () => {
             type:"email",
             placeholder:"Your Mail",
             label:"Email",
-            required: true, 
-            // pattern: '^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$',
+            required: true,
+            pattern: regexmail,
             errorMessage:"Please enter a valid email adress",
         },
         {
@@ -61,7 +61,8 @@ const Form = () => {
     }
 
     const onChange = (e) => {
-        setValues({...values, [e.target.name]: e.target.value});
+        const {id, value} = e.target;
+        setValues({...values, [id]: value});
     };
 
     console.log(values)

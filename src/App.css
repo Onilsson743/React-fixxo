@@ -882,7 +882,8 @@ a:hover {
   width: 100%;
 }
 .contact .form form textarea:focus, .contact .form form input:focus {
-  outline: 1px solid rgb(187, 186, 186);
+  outline: none;
+  border: 1px solid rgb(187, 186, 186);
 }
 .contact .form form input {
   width: 100%;
@@ -895,6 +896,28 @@ a:hover {
   padding: 5px 15px;
   border: 1px solid #E6E6E6;
 }
+.contact .form form .errormessage {
+  color: red;
+  font-size: 0.7rem;
+  padding-left: 15px;
+}
 .contact .form form button {
   font-weight: 600;
+}
+
+.invalid {
+  border: 1px solid red !important;
+  color: red;
+}
+.invalid:focus {
+  border: 1px solid red !important;
+}
+.invalid::-moz-placeholder {
+  color: red;
+}
+.invalid:-ms-input-placeholder {
+  color: red;
+}
+.invalid::placeholder {
+  color: red;
 }/*# sourceMappingURL=App.css.map */
