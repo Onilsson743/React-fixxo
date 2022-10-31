@@ -118,34 +118,31 @@ const Contact = () => {
                 <div> 
                     <h1>Thank you for your comment</h1>
                 </div>
-            ) 
-            :
-            (
-                <>
-                    <pre>{ JSON.stringify(formErrors) }</pre>
-                    <section className='_center'>
-                        <div className='form _containersmall'>
-                            <h5>Come in Contact with Us</h5>
-                            <form onSubmit={handleSubmit}>
-                                <div>
-                                    <input onKeyUp={handleKeyUp} id='name' type="text" name="fullname" placeholder='Your Name' value={contactForm.name} onChange={handleChange} ></input>
-                                    <span className='errormessage'>{formErrors.name}</span>
-                                </div>
-                                <div>
-                                    <input onKeyUp={handleKeyUp} id='email' type="email" name="email" placeholder='Your Mail' value={contactForm.email} onChange={handleChange}></input>
-                                    <span className='errormessage'>{formErrors.email}</span>
-                                </div>
-                                <div>
-                                    <textarea onKeyUp={handleKeyUp} id='comment' name="comment" placeholder='Comment' value={contactForm.comment} onChange={handleChange}></textarea>
-                                    <span className='errormessage'>{formErrors.comment}</span>
-                                </div>
-                                <button className='button-theme'>Post Comment</button>
-                            </form>
-                        </div>
-                    </section>
-                </>
-            )
+            ) : (<></>)
         }
+        <>
+            <pre>{ JSON.stringify(formErrors) }</pre>
+            <section className='_center'>
+                <div className='form _containersmall'>
+                    <h5>Come in Contact with Us</h5>
+                    <form onSubmit={handleSubmit}>
+                        <div>
+                            <input onKeyUp={handleKeyUp} id='name' type="text" name="fullname" placeholder='Your Name' value={contactForm.name} onChange={handleChange} ></input>
+                            <span className='errormessage'>{formErrors.name}</span>
+                        </div>
+                        <div>
+                            <input onKeyUp={handleKeyUp} id='email' type="email" name="email" placeholder='Your Mail' value={contactForm.email} onChange={handleChange}></input>
+                            <span className='errormessage'>{formErrors.email}</span>
+                        </div>
+                        <div>
+                            <textarea onKeyUp={handleKeyUp} id='comment' name="comment" placeholder='Comment' value={contactForm.comment} onChange={handleChange}></textarea>
+                            <span className='errormessage'>{formErrors.comment}</span>
+                        </div>
+                        <button className='button-theme'>Post Comment</button>
+                    </form>
+                </div>
+            </section>
+        </>  
         <Footer />
     </div>
   )

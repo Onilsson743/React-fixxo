@@ -9,9 +9,12 @@ const FullProduct = () => {
   return (
     <>
       <Navbar />
-      <Form />
-      {/* <ImagePreview /> */}
-      <ProductDetailsFull />
+      <section className='productdetails'>
+        <ImagePreview />
+        <ProductDetailsFull />
+      </section>
+      
+      
       <Footer />
       <div style={{height:"100vh"}}></div>
     </>

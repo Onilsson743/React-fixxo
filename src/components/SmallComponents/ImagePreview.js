@@ -1,36 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const ImagePreview = () => {
+
+  // const mainImage = document.getElementById("firstImage").src;
+  // console.log(mainImage)
+  const [currentImage, setCurrentImage] = useState(1);
+  // document.getElementById("bigpicture").src = mainImage
+  const setFullImage = (n) => {
+      document.getElementById("bigpicture").src = n.target.src
+  }
+
+
+
+
   return (
     <div className='imagepreview'>
       {/* <!-- Full-width images with number text --> */}
       <div className='fullsizeimg'>
-        <div className="mySlides">
-          <img src="img_woods_wide.jpg" />
-        </div>
-        <div className="mySlides">
-            <img src="img_5terre_wide.jpg"  />
-        </div>
-        <div className="mySlides">
-            <img src="img_mountains_wide.jpg"  />
-        </div>
-
-        {/* <!-- Next and previous buttons --> */}  
-        <a className="prev" onclick="plusSlides(-1)">vänster</a>
-        <a className="next" onclick="plusSlides(1)">höger</a>
+          <img id='bigpicture' src={currentImage} />
       </div>
 
       {/* small images */}
       <div className="images">
-        <div className="img">
-          <img className="demo cursor" src="img_woods.jpg"  onclick="currentSlide(1)" alt="The Woods" />
-        </div>
-        <div className="img">
-          <img className="demo cursor" src="img_5terre.jpg"  onclick="currentSlide(2)" alt="Cinque Terre" />
-        </div>
-        <div className="img">
-          <img className="demo cursor" src="img_mountains.jpg" onclick="currentSlide(3)" alt="Mountains and fjords" />
-        </div>
+        <img id='firstImage' onClick={setFullImage} src='https://cdn.pixabay.com/photo/2022/10/24/20/22/muhlviertel-7544316_1280.jpg' />
+        <img onClick={setFullImage} src='https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg' />
+        <img onClick={setFullImage} src='https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg' />        
       </div>
     </div>
   )
