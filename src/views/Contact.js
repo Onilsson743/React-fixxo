@@ -6,7 +6,7 @@ const Contact = () => {
 
     
 
-    const [contactForm, setContactForm] = useState({name: '', email: '', comment:''});
+    const [contactForm, setContactForm] = useState({name: '', email: '', comments:''});
     const [formErrors, setFormErrors] = useState({});
     const [canSubmit, setCanSubmit] = useState(false);
 
@@ -23,10 +23,10 @@ const Contact = () => {
         else if(!regex_email.test(values.email)) {
             errors.email = "You must enter a valid email (eg name@domain.com)"
         }
-        if(!values.comment) {
-            errors.comment = "You must enter a comment";
-        }else if (values.comment.length < 2) {
-            errors.comment = "your comment must be longer then five characters"
+        if(!values.comments) {
+            errors.comments = "You must enter a comment";
+        }else if (values.comments.length < 2) {
+            errors.comments = "your comment must be longer then five characters"
         }
 
         if (Object.keys(errors).length === 0) {
@@ -41,15 +41,31 @@ const Contact = () => {
 
     const handleChange = (e) => {
         const {id, value} = e.target;
-        setContactForm({...contactForm, [id]: value})
+        setContactForm({...contactForm, [id]: value})        
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setFormErrors(validate(contactForm))
-        const data = new FormData(e.target);
-        console.log(data)
-        console.log(Object.fromEntries(data.entries()));
+        // const data = new FormData(e.target);
+        // console.log(data)
+        // console.log(Object.fromEntries(data.entries()));
+        // console.log(JSON.stringify(contactForm))
+        
+
+        if (formErrors.name === undefined && formErrors.email === undefined && formErrors.comment === undefined) {
+            const json = JSON.stringify(contactForm)
+            console.log(json)
+            fetch('https://win22-webapi.azurewebsites.net/api/contactform', {
+                method: 'POST',
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                body: json
+            })
+            .then(res => console.log(res));
+            setCanSubmit(true);
+        }
+        
     }   
 
     const handleKeyUp = (e) => {
@@ -59,7 +75,7 @@ const Contact = () => {
         const inputValue = e.target.value;
        
         // Name field validation
-        if (inputName === "fullname") {
+        if (inputName === "name") {
             const pattern = /^[A-Z][A-Za-z ]{1,30}$/
             if (inputValue.match(pattern) ) {
                 delete error.name;
@@ -92,7 +108,7 @@ const Contact = () => {
         }
 
         // Comment validation
-        else if (inputName === "comment") {
+        else if (inputName === "comments") {
             console.log("this is comment")
             if (inputValue.length < 2) {
                 e.target.classList.add("invalid")
@@ -112,22 +128,34 @@ const Contact = () => {
     
   return (
     <div className='contact'>
-        {/* <Navbar /> */}
+        <Navbar />
+        <section className='_center'>
+-            <span className='breadcrumb _containersmall'>
+-                <a><i class="fa-solid fa-house"></i>Home</a>
+-                <span>/</span>
+-                <a className='active'>Contacts</a>
+-            </span>
+-        </section>
+-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192276.90176714933!2d7.903638043050079!3d62.557697927021984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46140b9c5fbe81f1%3A0x9340f03793a026c3!2sRomsdalseggen!5e0!3m2!1sen!2sse!4v1666015577808!5m2!1sen!2sse" width="100%" height="400" title='map' />
+-        
+
         {
             canSubmit ? (
-                <div> 
-                    <h1>Thank you for your comment</h1>
+                <div className='submitted'> 
+                    <div className='message'>
+                        <h1>Thank you for your comment</h1>
+                    </div>
+                    
                 </div>
             ) : (<></>)
         }
         <>
-            <pre>{ JSON.stringify(formErrors) }</pre>
             <section className='_center'>
                 <div className='form _containersmall'>
                     <h5>Come in Contact with Us</h5>
                     <form onSubmit={handleSubmit}>
                         <div>
-                            <input onKeyUp={handleKeyUp} id='name' type="text" name="fullname" placeholder='Your Name' value={contactForm.name} onChange={handleChange} ></input>
+                            <input onKeyUp={handleKeyUp} id='name' type="text" name="name" placeholder='Your Name' value={contactForm.name} onChange={handleChange} ></input>
                             <span className='errormessage'>{formErrors.name}</span>
                         </div>
                         <div>
@@ -135,7 +163,7 @@ const Contact = () => {
                             <span className='errormessage'>{formErrors.email}</span>
                         </div>
                         <div>
-                            <textarea onKeyUp={handleKeyUp} id='comment' name="comment" placeholder='Comment' value={contactForm.comment} onChange={handleChange}></textarea>
+                            <textarea onKeyUp={handleKeyUp} id='comments' name="comments" placeholder='Comment' value={contactForm.comments} onChange={handleChange}></textarea>
                             <span className='errormessage'>{formErrors.comment}</span>
                         </div>
                         <button className='button-theme'>Post Comment</button>

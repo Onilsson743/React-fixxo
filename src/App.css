@@ -193,6 +193,40 @@ a:hover {
   align-items: center;
   width: 255px;
 }
+.product-card #imagePreview {
+  z-index: 50;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.product-card #imagePreview img {
+  width: 700px;
+  height: auto;
+  -webkit-animation: scale 0.5s ease-in-out;
+          animation: scale 0.5s ease-in-out;
+}
+@-webkit-keyframes scale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes scale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 .product-card .img-window {
   width: 255px;
   height: 210px;
@@ -331,6 +365,14 @@ a:hover {
   border: 1px solid black;
 }
 
+.productdetailsfull {
+  width: 540px;
+  border: 1px solid black;
+}
+.productdetailsfull .title {
+  font-size: 2.5rem;
+}
+
 .top-navbar {
   background: linear-gradient(90deg, rgb(230, 230, 230) 0%, rgb(245, 245, 245) 100%);
   border-bottom: 1px solid black;
@@ -356,6 +398,7 @@ a:hover {
   flex-direction: column;
   align-items: center;
   padding-top: 7rem;
+  top: 0;
   gap: 1rem;
   right: -200px;
   width: 200px;
@@ -854,6 +897,17 @@ a:hover {
 }
 .contact .top-navbar {
   background: white;
+}
+.contact .submitted {
+  display: flex;
+  justify-content: center;
+}
+.contact .submitted .message {
+  padding: 2rem 4rem;
+  background-color: rgb(198, 235, 198);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .contact .form {
   margin: 65px 0;

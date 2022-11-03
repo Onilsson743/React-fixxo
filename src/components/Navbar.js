@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import Logo from '../images/logo.svg'
 import IconLinks from './SmallComponents/IconLinks'
+import ProductContext from '../data/productContext'
 
 
 
@@ -26,7 +26,21 @@ const Navbar = () => {
     setShowMenu(!showMenu);
   }
 
-
+  const shoppingCart = useContext(ProductContext).shoppingcart
+  // const [shoppingCart, setShoppingCart] = useContext(ProductContext).shoppingcart
+  console.log(shoppingCart)
+  let number = 0
+  if (shoppingCart === undefined) {
+  } else {
+    shoppingCart.map(() => {
+      number++
+    })
+  }
+  // shoppingCart.map(() => {
+  //   number++
+  // })
+  // console.log(number)
+  
   
 
   return (
@@ -46,7 +60,7 @@ const Navbar = () => {
           <IconLinks link = "/serch" icon = "fa-regular fa-magnifying-glass" />
           <IconLinks hideMobile = {true} link = "/serch" icon = "fa-regular fa-arrows-repeat" />
           <IconLinks hideMobile = {true} link = "/serch" icon = "fa-regular fa-heart" number={"10"} />
-          <IconLinks link = "/serch" icon = "fa-regular fa-bag-shopping" number={"99+"} />
+          <IconLinks link = "/serch" icon = "fa-regular fa-bag-shopping" number={number} />
           <button className={`mobile-menu ${showMenu ? "mobile-menu-open" : ""}`} onClick={toggleMenu}></button>
         </section>
 

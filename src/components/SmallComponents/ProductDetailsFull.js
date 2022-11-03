@@ -19,11 +19,11 @@ const ProductDetailsFull = (data) => {
 
     const products = [
         {
-            id:1,
-            name: "Iphone 15",
-            brand: "Apple",
+            id:12345670,
+            name: "Modern Black Blouse",
+            brand: " The Northland",
             rating: 5,
-            description: "Dyra som fan",
+            description: "Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly.",
             size: ["S", "M", "L", "XL"],
             colors: ["white", "black", "red", "gold", "silver", "magenta"],
         },

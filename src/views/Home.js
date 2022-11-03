@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createContext } from 'react'
 import Sale from '../components/Sale';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
@@ -11,14 +11,16 @@ import FashionFlashSale from '../components/FashionFlashSale';
 import SortedProductsSection from '../components/SortedProductsSection';
 import Support from '../components/Support';
 import Footer from '../components/Footer';
+import ProductContext from '../App'
 
 const Home = () => {
+
   return (
     <div>
         <Navbar />
         <Header />
         <Sale />
-        <FeaturedProducts />
+        <FeaturedProducts  />
         <FlashSale />
         <SupportOptions />
         <FlashSaleUpper />

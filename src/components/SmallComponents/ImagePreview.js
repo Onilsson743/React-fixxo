@@ -1,17 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import Product from '../../data/products.json'
 
 const ImagePreview = () => {
 
-  // const mainImage = document.getElementById("firstImage").src;
-  // console.log(mainImage)
-  const [currentImage, setCurrentImage] = useState(1);
-  // document.getElementById("bigpicture").src = mainImage
+  const firstImage = Product[0].images[0]
+  const [currentImage, setCurrentImage] = useState(firstImage);
+  
   const setFullImage = (n) => {
-      document.getElementById("bigpicture").src = n.target.src
+    setCurrentImage(n.target.src)
   }
+  useEffect(() => {
+    console.log("test")
+  }, [currentImage])
 
-
-
+ 
 
   return (
     <div className='imagepreview'>
@@ -22,9 +24,9 @@ const ImagePreview = () => {
 
       {/* small images */}
       <div className="images">
-        <img id='firstImage' onClick={setFullImage} src='https://cdn.pixabay.com/photo/2022/10/24/20/22/muhlviertel-7544316_1280.jpg' />
-        <img onClick={setFullImage} src='https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg' />
-        <img onClick={setFullImage} src='https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg' />        
+        <img id='firstImage' onClick={setFullImage} src={Product[0].images[0]} />
+        <img onClick={setFullImage} src={Product[0].images[1]} />
+        <img onClick={setFullImage} src={Product[0].images[2]} />        
       </div>
     </div>
   )

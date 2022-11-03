@@ -6,6 +6,19 @@
         background: white;
     }
 
+    .submitted {
+        display: flex;
+        justify-content: center;
+
+        .message {
+            padding: 2rem 4rem;
+            background-color: rgb(198, 235, 198);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
     .form {
         margin: 65px 0;
         display: flex;

@@ -4,6 +4,29 @@
     align-items: center;
     width: 255px;
 
+    #imagePreview {
+        z-index: 50;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.5);
+        height: 100vh;
+        width: 100vw;
+        display: none;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 700px;
+            height: auto;
+            animation: scale 0.5s ease-in-out;
+        }
+        @keyframes scale {
+            from {transform: scale(0)}
+            to {transform: scale(1);}
+        }
+    }
+
     .img-window {
         width: 255px;
         height: 210px;
@@ -89,3 +112,4 @@
         }
     }
 }
+
