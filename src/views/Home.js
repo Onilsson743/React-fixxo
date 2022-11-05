@@ -15,6 +15,9 @@ import ProductContext from '../App'
 
 const Home = () => {
 
+  var object = localStorage.getItem('productCart')
+  console.log(object)
+
   return (
     <div>
         <Navbar />

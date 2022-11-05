@@ -1,3 +1,12 @@
 [
- 
+    {
+        "id":12345670,
+        "name": "Modern Black Blouse",
+        "brand": " The Northland",
+        "rating": 4,
+        "description": "Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly.",
+        "size": ["S", "M", "L", "XL"],
+        "colors": ["white", "black", "red", "gold", "silver", "magenta"],
+        "images": ["https://cdn.pixabay.com/photo/2015/04/08/13/13/food-712665_1280.jpg", "https://cdn.pixabay.com/photo/2014/11/05/15/57/salmon-518032_1280.jpg", "https://cdn.pixabay.com/photo/2017/03/23/19/57/asparagus-2169305_1280.jpg"]
+    }
 ]

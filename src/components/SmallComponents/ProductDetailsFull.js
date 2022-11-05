@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import Product from '../../data/products.json';
+import StarRating from './StarRating';
 
 const ProductDetailsFull = (data) => {
 
@@ -13,68 +15,41 @@ const ProductDetailsFull = (data) => {
         if (amount > 0) {
             setAmount(amount - 1);
         }
-        
     }
-
-
-    const products = [
-        {
-            id:12345670,
-            name: "Modern Black Blouse",
-            brand: " The Northland",
-            rating: 5,
-            description: "Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly.",
-            size: ["S", "M", "L", "XL"],
-            colors: ["white", "black", "red", "gold", "silver", "magenta"],
-        },
-        {
-            id:2,
-            name: "Surface Pro",
-            brand: "Microsoft",
-            rating: 2,
-            description: "För billiga",
-            size: ["S", "M", "L", "XL"],
-            colors: ["white", "black", "red", "gold", "silver", "magenta"],
-        },
-        {
-            id:3,
-            name: "ScanNcut",
-            brand: "Brother",
-            rating: 4,
-            description: "Dyra som fan",
-            size: ["S", "M", "L", "XL"],
-            colors: ["white", "black", "red", "gold", "silver", "magenta"],
-        }
-    ]
-    console.log(products[0].id)
-    const product1 = products[0]
+    
+    const product = Product[0]
+    const sizes = product.size
+    const colors = product.colors
 
 return (
     <div className='productdetailsfull'>
-        <h1 className='title'>{product1.name}</h1>
-        <p className='idbrand'><span>ID: {product1.id}</span><span>Brand {product1.brand}</span></p>
+        <h1 className='title'>{product.name}</h1>
+        <p className='idbrand'><span>ID: {product.id}</span><span>Brand {product.brand}</span></p>
         <span className='starrating'>
-            Start rating
+            <StarRating number={product.rating} />
         </span>
-        <p className='description'>Description: {product1.description}</p>
+        <p className='description'>Description: {product.description}</p>
         <form>
             <span>
                 <h2>Sizes:</h2>
                 <span>
-                    <button>S</button>
-                    <button>M</button>
-                    <button>L</button>
-                    <button>XL</button>
+                    {
+                        sizes.map(sizes => <button key={sizes}>{sizes}</button>)
+                    }
                 </span>
             </span>
             <span>
                 <h2>Color:</h2>
-                <input></input>
+                <select>
+                    {
+                        colors.map(colors => <option key={colors} value={colors}>{colors}</option>)
+                    }
+                </select>
             </span>
             <span>
                 <h2>Qty:</h2>
                 <section><button onClick={decrease}>-</button><span>{amount}</span><button onClick={increase}>+</button></section>
-                <button className='button-theme'>ADD TO CART</button>
+                <button type='submit' className='button-theme'>ADD TO CART</button>
             </span>
         </form>
         <span> 

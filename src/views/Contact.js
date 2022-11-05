@@ -4,8 +4,6 @@ import Navbar from '../components/Navbar'
 
 const Contact = () => {
 
-    
-
     const [contactForm, setContactForm] = useState({name: '', email: '', comments:''});
     const [formErrors, setFormErrors] = useState({});
     const [canSubmit, setCanSubmit] = useState(false);
@@ -131,7 +129,7 @@ const Contact = () => {
         <Navbar />
         <section className='_center'>
 -            <span className='breadcrumb _containersmall'>
--                <a><i class="fa-solid fa-house"></i>Home</a>
+-                <a><i className="fa-solid fa-house"></i>Home</a>
 -                <span>/</span>
 -                <a className='active'>Contacts</a>
 -            </span>

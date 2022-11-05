@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import IconLinks from './SmallComponents/IconLinks'
 import ProductContext from '../data/productContext'
@@ -28,7 +28,7 @@ const Navbar = () => {
 
   const shoppingCart = useContext(ProductContext).shoppingcart
   // const [shoppingCart, setShoppingCart] = useContext(ProductContext).shoppingcart
-  console.log(shoppingCart)
+  // console.log(shoppingCart)
   let number = 0
   if (shoppingCart === undefined) {
   } else {

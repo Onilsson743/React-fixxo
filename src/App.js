@@ -5,7 +5,7 @@ import Home from './views/Home';
 import NotFound from './views/NotFound';
 import Categories from './views/Categories';
 import FullProduct from './views/FullProductView';
-import { createContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ProductContext from './data/productContext'
 
 
@@ -39,6 +39,14 @@ function App() {
 
   useEffect(() => {
     FetchProducts()
+  }, [])
+  
+
+  const [cart, setCart] = useState([])
+  useEffect(() => {
+    window.addEventListener('storage', () => {
+      setCart(JSON.parse(localStorage.getItem('myCart')) || [])
+    });
   }, [])
   
   return (

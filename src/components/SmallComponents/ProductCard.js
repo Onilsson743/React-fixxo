@@ -1,5 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ProductContext from '../../data/productContext'
+import StarRating from './StarRating';
 
 
 const ProductCard = ({item}) => {
@@ -10,16 +11,20 @@ const ProductCard = ({item}) => {
     setImagePreview(!imagePreview)
   }
 
-  const [shoppingCart, setShoppingCart] = useContext(ProductContext).shoppingCart
-  const allproducts = useContext(ProductContext).all
+  const [shoppingCart, setShoppingCart] = useState([]);
+  // const allproducts = (useContext(ProductContext).all)
+  // console.log(typeof allproducts)
+
   const addToCart = () => {
     
-    console.log(allproducts)
-    console.log(item)
-    setShoppingCart(item)
-    console.log(shoppingCart)
     
-
+    // setShoppingCart(shoppingCart => [...shoppingCart, item])
+    setShoppingCart([...shoppingCart, item])
+    console.log(shoppingCart)
+    console.log(typeof shoppingCart)
+    // console.log(item)
+    // setShoppingCart(item)
+    // console.log(shoppingCart)
   }
 
   
@@ -34,7 +39,7 @@ const ProductCard = ({item}) => {
             <div className="icons">
                 <a className="icon-links"><i className="fa-regular fa-code-compare"></i></a>
                 <a className="icon-links"><i className="fa-regular fa-heart"></i></a>
-                <a className="icon-links" onClick={addToCart} ><i className="fa-regular fa-bag-shopping"></i></a>
+                <span className="icon-links" onClick={addToCart} ><i className="fa-regular fa-bag-shopping"></i></span>
             </div>
             <button className="button-theme" onClick={showImage} >Quick View</button>
         </div>
@@ -42,11 +47,7 @@ const ProductCard = ({item}) => {
           <p>{item.category}</p>
           <h6>{item.name}</h6>
           <span className="star-rating">
-              <i className="fa-sharp fa-solid fa-star"></i>
-              <i className="fa-sharp fa-solid fa-star"></i>
-              <i className="fa-sharp fa-solid fa-star"></i>
-              <i className="fa-sharp fa-solid fa-star"></i>
-              <i className="fa-sharp fa-solid fa-star"></i>
+            <StarRating number={item.rating} />
           </span>
           <h5>${item.price}</h5>
         </div>

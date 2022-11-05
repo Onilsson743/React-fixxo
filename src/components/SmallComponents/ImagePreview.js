@@ -9,9 +9,6 @@ const ImagePreview = () => {
   const setFullImage = (n) => {
     setCurrentImage(n.target.src)
   }
-  useEffect(() => {
-    console.log("test")
-  }, [currentImage])
 
  
 
