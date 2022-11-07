@@ -1,21 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
+import StarRating from './StarRating'
 
-const ProductCardHorizontal = () => {
+
+const ProductCardHorizontal = ({item}) => {
+
+  
   return (
     <div className='_containersmall productcardhorizontal'>
-        <div className='img-box'></div>
+        <div className='img-box' >
+          <img src={item.imageName} />
+        </div>
         <section className='description'>
-            <p>Category</p>
-            <h6>Modern Black </h6>
-            <h6>Blouse</h6>
+            <p>{item.category}</p>
+            <h6>{item.name}</h6>
             <span className="star-rating">
-                <i className="fa-sharp fa-solid fa-star"></i>
-                <i className="fa-sharp fa-solid fa-star"></i>
-                <i className="fa-sharp fa-solid fa-star"></i>
-                <i className="fa-sharp fa-solid fa-star"></i>
-                <i className="fa-sharp fa-solid fa-star"></i>
+                <StarRating number={item.rating} />
             </span>
-            <h5>$35.00</h5>
+            <h5>${item.price}</h5>
         </section>
     </div>
   )

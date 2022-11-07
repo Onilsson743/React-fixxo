@@ -324,6 +324,12 @@ a:hover {
   height: 130px;
   background-color: #f5f5f5;
 }
+.productcardhorizontal .img-box img {
+  width: 160px;
+  height: 130px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .productcardhorizontal .description {
   margin-left: 14px;
 }
@@ -375,7 +381,6 @@ a:hover {
 
 .top-navbar {
   background: linear-gradient(90deg, rgb(230, 230, 230) 0%, rgb(245, 245, 245) 100%);
-  border-bottom: 1px solid black;
   padding: 1rem 0;
   position: fixed;
   width: 100%;
@@ -515,14 +520,15 @@ a:hover {
   }
 }
 .header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: rgb(230, 230, 230);
   background: linear-gradient(90deg, rgb(230, 230, 230) 0%, rgb(245, 245, 245) 100%);
   padding-top: 100px;
-  position: relative;
+}
+.header ._container {
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .header img {
   display: none;
@@ -533,6 +539,8 @@ a:hover {
   justify-content: center;
   align-items: center;
   padding-bottom: 50px;
+  z-index: 2;
+  width: 30%;
 }
 .header .header-text h1 {
   font-weight: 800;
@@ -698,6 +706,8 @@ a:hover {
   flex-direction: column;
   align-items: center;
   margin-top: 65px;
+  background-color: #f5f5f5;
+  padding: 60px 70px;
 }
 .supportoptions .flex {
   display: flex;
@@ -710,6 +720,7 @@ a:hover {
   height: 232px;
   display: flex;
   justify-content: space-between;
+  background-color: white;
 }
 .supportoptions .flex .info-box .text {
   display: flex;
@@ -776,6 +787,16 @@ a:hover {
      object-fit: cover;
 }
 
+@media (min-width: 1400px) {
+  .supportoptions .flex {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: none;
+  }
+  .supportoptions .flex .info-box {
+    width: 33%;
+  }
+}
 .flashsaleupper {
   display: flex;
   gap: 35px;
@@ -836,6 +857,12 @@ a:hover {
   gap: 30px;
 }
 
+@media (min-width: 1400px) {
+  .sortedproductsection {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 .support {
   display: flex;
   justify-content: space-between;
@@ -868,6 +895,9 @@ a:hover {
 
 .footer {
   background-color: #f8f8f8;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
   height: 110px;
   display: flex;
   justify-content: center;

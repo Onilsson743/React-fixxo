@@ -6,6 +6,12 @@
         width: 160px;
         height: 130px;
         background-color: $color-grey-2;
+
+        img{
+            width: 160px;
+            height: 130px;
+            object-fit: cover;
+        }
     }
     .description {
         margin-left: 14px;
