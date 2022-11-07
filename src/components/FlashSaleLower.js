@@ -5,7 +5,7 @@ import ProductContext from '../data/productContext'
 
 const FlashSaleLower = () => {
 
-  const products = (useContext(ProductContext).all).slice(12,16)
+  const products = (useContext(ProductContext).products.all).slice(12,16)
 
 
   return (

@@ -19,7 +19,7 @@ const FeaturedProducts = () => {
   // ]);
   // const items = products.map;
 
-  const products = (useContext(ProductContext).all).slice(0,8)
+  const products = (useContext(ProductContext).products.all).slice(0,8)
   
   
 

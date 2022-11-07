@@ -5,7 +5,7 @@ import Home from './views/Home';
 import NotFound from './views/NotFound';
 import Categories from './views/Categories';
 import FullProduct from './views/FullProductView';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useReducer, useState } from 'react';
 import ProductContext from './data/productContext'
 
 
@@ -17,23 +17,8 @@ function App() {
     shoppingCart: []
   })
 
-  // setInterval(() => {
-  //   console.log(products)
-  // }, 20000);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     let result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
-  //     setProducts(result.json())
-  //   }
-  //   fetchData();
-  // },[productss])
-
-  // const productApi = 'https://win22-webapi.azurewebsites.net/api/products'
-
   async function FetchProducts() {
     const response = await fetch('https://win22-webapi.azurewebsites.net/api/products')
-    // const responseData = await response.json();
     setProducts({...products, all: await response.json()})
   }
 
@@ -41,17 +26,24 @@ function App() {
     FetchProducts()
   }, [])
   
+  // const reducer = (state, action) => {
+  //   switch(action.type) {
+  //     case 'ADD':
 
-  const [cart, setCart] = useState([])
-  useEffect(() => {
-    window.addEventListener('storage', () => {
-      setCart(JSON.parse(localStorage.getItem('myCart')) || [])
-    });
-  }, [])
+  //     default: 
+  //       return state
+  //   }
+  // }
+  // const [state, dispatch] = useReducer(reducer, [])
+  
+  const addToCart = (item) => {
+    setProducts({...products, shoppingCart: item})
+    console.log(products.shoppingCart)
+  }
   
   return (
     <BrowserRouter>
-      <ProductContext.Provider value={products}>
+      <ProductContext.Provider value={{products, addToCart}}>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='*' element={<NotFound />} />

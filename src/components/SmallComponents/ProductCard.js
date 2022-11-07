@@ -11,21 +11,29 @@ const ProductCard = ({item}) => {
     setImagePreview(!imagePreview)
   }
 
-  const [shoppingCart, setShoppingCart] = useState([]);
+  const { addToCart } = useContext(ProductContext).addToCart
+
+  // const [shoppingCart, setShoppingCart] = useState([]);
   // const allproducts = (useContext(ProductContext).all)
   // console.log(typeof allproducts)
+  // const [products, setProducts] = useContext(ProductContext).products
+  // (useContext(ProductContext).products.shoppingcart)
 
-  const addToCart = () => {
+  // const addToCart = () => {
+   
+    // const id = item.articleNumber
+    // console.log(id)
+    // localStorage.setItem(id, JSON.stringify(item))
+    // let test = localStorage.getItem(id)
+    // console.log(localStorage)
     
+    // localStorage.clear()
     
-    // setShoppingCart(shoppingCart => [...shoppingCart, item])
-    setShoppingCart([...shoppingCart, item])
-    console.log(shoppingCart)
-    console.log(typeof shoppingCart)
-    // console.log(item)
-    // setShoppingCart(item)
+    // setShoppingCart([...shoppingCart, item])
     // console.log(shoppingCart)
-  }
+  // }
+
+
 
   
   return (

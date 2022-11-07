@@ -1,4 +1,4 @@
-import React, { createContext } from 'react'
+import React, { createContext, useContext, useState } from 'react'
 import Sale from '../components/Sale';
 import Header from '../components/Header';
 import Navbar from '../components/Navbar';
@@ -11,12 +11,19 @@ import FashionFlashSale from '../components/FashionFlashSale';
 import SortedProductsSection from '../components/SortedProductsSection';
 import Support from '../components/Support';
 import Footer from '../components/Footer';
-import ProductContext from '../App'
+import ProductContext from '../data/productContext';
+
 
 const Home = () => {
 
-  var object = localStorage.getItem('productCart')
-  console.log(object)
+  // var object = localStorage.getItem('productCart')
+  // console.log(object)
+  
+
+  // const products = useContext(ProductContext).products;
+  // console.log(products)
+
+  
 
   return (
     <div>

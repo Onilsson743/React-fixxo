@@ -26,16 +26,45 @@ const Navbar = () => {
     setShowMenu(!showMenu);
   }
 
-  const shoppingCart = useContext(ProductContext).shoppingcart
-  // const [shoppingCart, setShoppingCart] = useContext(ProductContext).shoppingcart
-  // console.log(shoppingCart)
-  let number = 0
-  if (shoppingCart === undefined) {
-  } else {
-    shoppingCart.map(() => {
-      number++
-    })
+  let shoppingCart = useContext(ProductContext).products.shoppingCart
+  let numbers = localStorage.length
+  
+  window.addEventListener('storage', () => {
+    console.log("works")
+  });
+  window.onstorage = () => {
+    console.log("NewTest")
   }
+
+  useEffect(() => {
+    const updateCart = () => {
+      numbers = localStorage.length
+      console.log("test")
+    }
+    window.addEventListener('', () => {
+      numbers = localStorage.length
+      console.log("tsting")
+    })
+    return () => {
+      window.removeEventListener('storage', updateCart)
+    }
+  }, [])
+
+  const handleClick = () => {
+    // console.log(shoppingCart)
+    console.log(localStorage.length)
+    localStorage.clear()
+    console.log("cleared")
+    // console.log(localStorage)
+  }
+ 
+
+  // if (shoppingCart === undefined) {
+  // } else {
+  //   shoppingCart.map(() => {
+  //     number++
+  //   })
+  // }
   // shoppingCart.map(() => {
   //   number++
   // })
@@ -47,7 +76,7 @@ const Navbar = () => {
     <div id='navbar' className='top-navbar '>
       <div className='_container _navbar'>
         
-        <h1 className='logo'>Fixxo.</h1>
+        <h1 onClick={handleClick} className='logo'>Fixxo.</h1>
         
         <section className={`navbar-menu ${showMenu ? "display" : ""}`} >
           <NavLink className='navbar-link' to='/' end>Home</NavLink>
@@ -57,10 +86,10 @@ const Navbar = () => {
         </section>
 
         <section className='navbar-icons'>
-          <IconLinks link = "/serch" icon = "fa-regular fa-magnifying-glass" />
+          <IconLinks link = "/serch"  icon = "fa-regular fa-magnifying-glass" />
           <IconLinks hideMobile = {true} link = "/serch" icon = "fa-regular fa-arrows-repeat" />
           <IconLinks hideMobile = {true} link = "/serch" icon = "fa-regular fa-heart" number={"10"} />
-          <IconLinks link = "/serch" icon = "fa-regular fa-bag-shopping" number={number} />
+          <IconLinks link = "/serch" icon = "fa-regular fa-bag-shopping" number={numbers} />
           <button className={`mobile-menu ${showMenu ? "mobile-menu-open" : ""}`} onClick={toggleMenu}></button>
         </section>
 

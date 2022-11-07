@@ -7,7 +7,7 @@ import ProductContext from '../data/productContext'
 
 const FullProduct = () => {
 
-  const products = (useContext(ProductContext).all).slice(0,3)
+  const products = (useContext(ProductContext).products.all).slice(0,3)
   
   localStorage.setItem('productCart',products)
 

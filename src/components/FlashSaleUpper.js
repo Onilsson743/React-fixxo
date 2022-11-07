@@ -6,7 +6,7 @@ import ProductCard from './SmallComponents/ProductCard'
 
 const FlashSaleUpper = () => {
 
-  const products = (useContext(ProductContext).all).slice(8,12)
+  const products = (useContext(ProductContext).products.all).slice(8,12)
 
   return (
     <div className='_center'>
