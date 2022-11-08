@@ -27,7 +27,7 @@ const Navbar = () => {
   }
 
   let shoppingCart = useContext(ProductContext).products.shoppingCart
-  let numbers = localStorage.length
+  
   
   window.addEventListener('storage', () => {
     console.log("works")
@@ -59,16 +59,12 @@ const Navbar = () => {
   }
  
 
-  // if (shoppingCart === undefined) {
-  // } else {
-  //   shoppingCart.map(() => {
-  //     number++
-  //   })
-  // }
-  // shoppingCart.map(() => {
-  //   number++
-  // })
   // console.log(number)
+
+  const test = useContext(ProductContext).products.shoppingCart
+  
+  const numbers = 0
+ 
   
   
 

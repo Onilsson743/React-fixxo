@@ -3,6 +3,7 @@ import ProductContext from '../../data/productContext'
 import StarRating from './StarRating';
 
 
+
 const ProductCard = ({item}) => {
 
   const [imagePreview, setImagePreview] = useState(false);
@@ -11,7 +12,7 @@ const ProductCard = ({item}) => {
     setImagePreview(!imagePreview)
   }
 
-  const { addToCart } = useContext(ProductContext).addToCart
+  
 
   // const [shoppingCart, setShoppingCart] = useState([]);
   // const allproducts = (useContext(ProductContext).all)
@@ -33,6 +34,14 @@ const ProductCard = ({item}) => {
     // console.log(shoppingCart)
   // }
 
+  const addToCart = useContext(ProductContext).addToCart
+  
+
+
+const handleclick = () => {
+  addToCart(item)
+}
+
 
 
   
@@ -47,7 +56,7 @@ const ProductCard = ({item}) => {
             <div className="icons">
                 <a className="icon-links"><i className="fa-regular fa-code-compare"></i></a>
                 <a className="icon-links"><i className="fa-regular fa-heart"></i></a>
-                <span className="icon-links" onClick={addToCart} ><i className="fa-regular fa-bag-shopping"></i></span>
+                <span className="icon-links" onClick={handleclick} ><i className="fa-regular fa-bag-shopping"></i></span>
             </div>
             <button className="button-theme" onClick={showImage} >Quick View</button>
         </div>

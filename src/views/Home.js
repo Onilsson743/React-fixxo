@@ -18,10 +18,15 @@ const Home = () => {
 
   // var object = localStorage.getItem('productCart')
   // console.log(object)
+
   
 
-  // const products = useContext(ProductContext).products;
+  const products = useContext(ProductContext).products;
   // console.log(products)
+
+  
+
+
 
   
 

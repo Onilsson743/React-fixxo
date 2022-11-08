@@ -16,6 +16,13 @@ function App() {
     all: [],
     shoppingCart: []
   })
+ 
+  const [test, setTest] = useState([])
+  const testClick = () => {
+    setTest([...test, 2])
+    console.log(test)
+  }
+  
 
   async function FetchProducts() {
     const response = await fetch('https://win22-webapi.azurewebsites.net/api/products')
@@ -25,25 +32,19 @@ function App() {
   useEffect(() => {
     FetchProducts()
   }, [])
-  
-  // const reducer = (state, action) => {
-  //   switch(action.type) {
-  //     case 'ADD':
 
-  //     default: 
-  //       return state
-  //   }
-  // }
-  // const [state, dispatch] = useReducer(reducer, [])
+  console.log(products.shoppingCart)
+  // const shoppingcart = products.shoppingCart
   
   const addToCart = (item) => {
     setProducts({...products, shoppingCart: item})
     console.log(products.shoppingCart)
+    console.log(item)
   }
   
   return (
     <BrowserRouter>
-      <ProductContext.Provider value={{products, addToCart}}>
+      <ProductContext.Provider value={{products, setProducts, addToCart, test, setTest, testClick}}>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='*' element={<NotFound />} />
