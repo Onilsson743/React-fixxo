@@ -368,7 +368,6 @@ a:hover {
 .imagepreview .images img {
   width: 160px;
   height: 132px;
-  border: 1px solid black;
 }
 
 .productdetailsfull {
@@ -377,6 +376,37 @@ a:hover {
 }
 .productdetailsfull .title {
   font-size: 2.5rem;
+}
+
+.shopping-cart-product {
+  width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fafafa;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 7px 10px 0px rgb(230, 230, 230);
+  transition: 0.3s ease-in-out;
+}
+.shopping-cart-product:hover {
+  scale: 1.01;
+}
+.shopping-cart-product .image-window {
+  height: 150px;
+  width: 200px;
+}
+.shopping-cart-product .image-window img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.shopping-cart-product .description {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  padding: 0 2rem;
 }
 
 .top-navbar {
@@ -1010,4 +1040,12 @@ a:hover {
   justify-content: center;
   width: 100vw;
   gap: 1rem;
+}
+
+.shopping-cart-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 200px;
+  gap: 30px;
+  align-items: center;
 }/*# sourceMappingURL=App.css.map */

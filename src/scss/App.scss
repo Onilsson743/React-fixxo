@@ -8,6 +8,7 @@
 @import './smallcomponentsSCSS/ImagePreview';
 // @import './smallcomponentsSCSS/Form';
 @import './smallcomponentsSCSS/ProductDetailsFull';
+@import './smallcomponentsSCSS/ShoppingCartProduct';
 
 
 // loading screen
@@ -33,5 +34,6 @@
 
 // Full pages
 @import './ViewsSCSS/Contact';
-@import './ViewsSCSS/FullProductView'
+@import './ViewsSCSS/FullProductView';
+@import './ViewsSCSS/ShoppingCart'
 

@@ -26,7 +26,7 @@ const Navbar = () => {
     setShowMenu(!showMenu);
   }
 
-  let shoppingCart = useContext(ProductContext).products.shoppingCart
+
   
   
   window.addEventListener('storage', () => {
@@ -59,11 +59,11 @@ const Navbar = () => {
   }
  
 
-  // console.log(number)
 
-  const test = useContext(ProductContext).products.shoppingCart
+
+  const shoppingCart = useContext(ProductContext).shoppingCart
   
-  const numbers = 0
+  const numbers = shoppingCart.length
  
   
   
@@ -85,7 +85,7 @@ const Navbar = () => {
           <IconLinks link = "/serch"  icon = "fa-regular fa-magnifying-glass" />
           <IconLinks hideMobile = {true} link = "/serch" icon = "fa-regular fa-arrows-repeat" />
           <IconLinks hideMobile = {true} link = "/serch" icon = "fa-regular fa-heart" number={"10"} />
-          <IconLinks link = "/serch" icon = "fa-regular fa-bag-shopping" number={numbers} />
+          <IconLinks link = "/shoppingcart" icon = "fa-regular fa-bag-shopping" number={numbers} />
           <button className={`mobile-menu ${showMenu ? "mobile-menu-open" : ""}`} onClick={toggleMenu}></button>
         </section>
 

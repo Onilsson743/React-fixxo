@@ -38,10 +38,9 @@ const ProductCard = ({item}) => {
   
 
 
-const handleclick = () => {
-  addToCart(item)
-}
-
+  const handleclick = () => {
+    addToCart(item)
+  }
 
 
   

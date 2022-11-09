@@ -5,7 +5,7 @@ const NotFound = () => {
   return (
     <div>
       <Navbar />
-      404 - Page Not Found
+      <h1 style={{margin: '40vh 40vw'}}>404 - Page Not Found</h1>
     </div>
   )
 }

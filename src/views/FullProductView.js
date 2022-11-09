@@ -19,7 +19,7 @@ const FullProduct = () => {
         <ProductDetailsFull />
       </section>    
       <Footer />
-      <div style={{height:"100vh"}}></div>
+      {/* <div style={{height:"100vh"}}></div> */}
     </>
   )
 }
