@@ -31,19 +31,21 @@ function App() {
   const [shoppingCart, setShoppingCart] = useState([])
   // console.log(shoppingCart)
   // console.log(products.all)
-  let Quantity = 0
+  const [quantity, setQuantity] = useState([])
   const addToCart = (item) => {
 
     // const inCart = shoppingCart.some(item => shoppingCart.articleNumber === item.articleNumber)
     if (shoppingCart.some(id => id.articleNumber === item.articleNumber)) {
       console.log("Already in cart")
+      setQuantity(...current => [...current, ])
+      localStorage.setItem(item)
     } else {
       setShoppingCart(current => [...current, item])
     }
     
     
     console.log(shoppingCart)
-    console.log(Quantity)
+  
   }
   
   return (

@@ -11,7 +11,6 @@ const Contact = () => {
     const validate = (values) => {
         const errors = {};
         const regex_email = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        console.log(values)
         if(!values.name) {
             errors.name = "You must enter a name";
         }
@@ -32,8 +31,6 @@ const Contact = () => {
         } else {
             setCanSubmit(false);
         }
-
-        console.log(formErrors)
         return errors;
     }
 

@@ -35,6 +35,7 @@ const ShoppingCartProduct = ({item}) => {
               <span>{number}</span>
               <button onClick={increase}>+</button>
             </div>
+            <p>Price: {}</p>
           </div>
 
         </div>

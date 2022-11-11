@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar'
 import ShoppingCartProduct from '../components/SmallComponents/ShoppingCartProduct'
 import { useContext } from 'react'
 import ProductContext from '../data/productContext'
+import ShoppingCartDetails from '../components/SmallComponents/ShoppingCartDetails'
 
 const ShoppingCart = () => {
 
@@ -11,23 +12,22 @@ const ShoppingCart = () => {
 
   let TotalPrice = 0
   shoppingCart.map(item => TotalPrice = TotalPrice + item.price)
-  console.log(TotalPrice)
+  
   
 
   return (
     <div>
         <Navbar />
         <div className='shopping-cart-section _container'>
-          {
-            shoppingCart.map(shoppingCart => <ShoppingCartProduct key={shoppingCart.articleNumber} item={shoppingCart} />)
-          }
-
+          <div className='shopping-cart-products'>
+            {
+              shoppingCart.map(shoppingCart => <ShoppingCartProduct key={shoppingCart.articleNumber} item={shoppingCart} />)
+            }          
+          </div>
           <div>
-            
+            <ShoppingCartDetails price={TotalPrice}/>
           </div>
         </div>
-
-        
     </div>
   )
 }

@@ -1,13 +1,16 @@
 import React from 'react'
 
-const StarRating = (number) => {
-  const stars = Array.from({length: number.number}, (_, index) => {
+const StarRating = ({number}) => {
+  
+  const stars = Array.from({length: number}, (e, id) => {
+    
     return (
-      <i className="fa-sharp fa-solid fa-star" key={index}></i>
+      <i className="fa-sharp fa-solid fa-star" key={id}  ></i>
     )
+    
   })
   return (
-    <span>{stars}</span>
+    <>{stars}</>
   )
 }
 

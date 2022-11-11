@@ -7,18 +7,18 @@ import ProductContext from '../data/productContext'
 
 const Navbar = () => {
 
-  // const scrollpos = () => {
-  //   let scrollposition = window.scrollY;
-  //   const navbar = document.getElementById('navbar');
-  //   if (scrollposition > 950) {
-  //     navbar.classList.add("navbar-white");
-  //   } else {
-  //     navbar.classList.remove("navbar-white")
-  //   }
-  //   console.log(scrollposition);
-  // }
+  const scrollpos = () => {
+    let scrollposition = window.scrollY;
+    const navbar = document.getElementById('navbar');
+    if (scrollposition > 950) {
+      navbar.classList.add("navbar-white");
+    } else {
+      navbar.classList.remove("navbar-white")
+    }
+    console.log(scrollposition);
+  }
 
-  // setInterval(scrollpos, 1000)
+  setInterval(scrollpos, 1000)
   
 
   const [showMenu, setShowMenu] = useState(false);
@@ -29,26 +29,26 @@ const Navbar = () => {
 
   
   
-  window.addEventListener('storage', () => {
-    console.log("works")
-  });
-  window.onstorage = () => {
-    console.log("NewTest")
-  }
+  // window.addEventListener('storage', () => {
+  //   console.log("works")
+  // });
+  // window.onstorage = () => {
+  //   console.log("NewTest")
+  // }
 
-  useEffect(() => {
-    const updateCart = () => {
-      numbers = localStorage.length
-      console.log("test")
-    }
-    window.addEventListener('', () => {
-      numbers = localStorage.length
-      console.log("tsting")
-    })
-    return () => {
-      window.removeEventListener('storage', updateCart)
-    }
-  }, [])
+  // useEffect(() => {
+  //   const updateCart = () => {
+  //     numbers = localStorage.length
+  //     console.log("test")
+  //   }
+  //   window.addEventListener('', () => {
+  //     numbers = localStorage.length
+  //     console.log("tsting")
+  //   })
+  //   return () => {
+  //     window.removeEventListener('storage', updateCart)
+  //   }
+  // }, [])
 
   const handleClick = () => {
     // console.log(shoppingCart)
