@@ -19,12 +19,12 @@ const ShoppingCart = () => {
     total = total + (e.price * e.quantity)
   })
 
-  const test = shoppingCart.length
-  let ask = false
-  if (test >= 1) {
-    ask = true
+  const emptyOrNot = shoppingCart.length
+  let renderOrNot = false
+  if (emptyOrNot >= 1) {
+    renderOrNot = true
   } else {
-    ask = false
+    renderOrNot = false
   }
 
 
@@ -35,7 +35,7 @@ const ShoppingCart = () => {
         <div className='shopping-cart-section _container'>
           <div className='shopping-cart-products'>
             {
-              test ? (
+              renderOrNot ? (
                 shoppingCart.map(shoppingCart => <ShoppingCartProduct key={shoppingCart.articleNumber} item={shoppingCart} />)
               ) : (<></>)
               // shoppingCart.map(shoppingCart => <ShoppingCartProduct key={shoppingCart.articleNumber} item={shoppingCart} />)
@@ -43,7 +43,7 @@ const ShoppingCart = () => {
           </div>
           <div>
             {
-              test ? (
+              renderOrNot ? (
                 <ShoppingCartDetails price={total}/>
               ) : (<>Your cart i empty</>)
             }
