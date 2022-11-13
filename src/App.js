@@ -29,22 +29,41 @@ function App() {
   }, [])
   
   const [shoppingCart, setShoppingCart] = useState([])
-  // console.log(shoppingCart)
-  // console.log(products.all)
-  const [quantity, setQuantity] = useState([])
+ 
+  // const [quantity, setQuantity] = useState([])
   const addToCart = (item) => {
 
-    // const inCart = shoppingCart.some(item => shoppingCart.articleNumber === item.articleNumber)
+   
     if (shoppingCart.some(id => id.articleNumber === item.articleNumber)) {
       console.log("Already in cart")
-      setQuantity(...current => [...current, ])
-      localStorage.setItem(item)
+      // const updatedCart = shoppingCart.map(e => {
+      //   if (e.articleNumber === item.articleNumber) {
+      //     console.log(e)
+      //     return {e, quantity: item.quantity + 1}
+      //   } else {
+      //     return e;
+      //   }
+      // })
+      // shoppingCart.map(object => {
+      //   console.log(object)
+      //   console.log(item)
+       
+      // }
+      // )
+      // console.log(updatedCart)
+      // setShoppingCart(updatedCart)
     } else {
+      // const cart = [item: item.quantity = 1]
+      const test = shoppingCart.map(e => e)
+      console.log(test)
+      // console.log(item)
       setShoppingCart(current => [...current, item])
+      console.log("added new")
+      console.log(shoppingCart)
     }
     
     
-    console.log(shoppingCart)
+    // console.log(shoppingCart)
   
   }
   

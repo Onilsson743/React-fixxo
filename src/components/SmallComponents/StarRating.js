@@ -5,7 +5,7 @@ const StarRating = ({number}) => {
   const stars = Array.from({length: number}, (e, id) => {
     
     return (
-      <i className="fa-sharp fa-solid fa-star" key={id}  ></i>
+      <i className="stars fa-sharp fa-solid fa-star" key={id}  ></i>
     )
     
   })

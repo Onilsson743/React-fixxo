@@ -28,17 +28,21 @@ return (
         <span className='starrating'>
             <StarRating number={product.rating} />
         </span>
+        <p>{product.price}</p>
         <p className='description'>Description: {product.description}</p>
         <form>
-            <span>
+            <span className='sizes-section'>
                 <h2>Sizes:</h2>
-                <span>
+                <span className='sizes-button-section' >
                     {
-                        sizes.map(sizes => <button key={sizes}>{sizes}</button>)
+                        sizes.map(sizes => <>
+                            <input name='sizes' type='radio' key={sizes} id={sizes} className='sizes-button' />
+                            <label htmlFor={sizes} >{sizes}</label>
+                        </>)
                     }
                 </span>
             </span>
-            <span>
+            <span className='color-section'>
                 <h2>Color:</h2>
                 <select>
                     {
