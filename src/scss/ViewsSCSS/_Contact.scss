@@ -1,6 +1,13 @@
 .contact {
     .breadcrumb {
-        padding-top: 80px;
+        padding-top: 150px;
+        padding-bottom: 35px;
+
+        justify-content: center;
+
+        ._containersmall {
+            width: 1110px;
+        }
     }
     .top-navbar {
         background: white;

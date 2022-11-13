@@ -43,6 +43,8 @@
                 width: 426px;
                 left: 50px;
                 bottom: 100px;
+                align-items: start;
+                text-align: start;
             }
         }
     }
@@ -59,9 +61,16 @@
             background-image: url("./images/new-arrivals.svg");
             width: 635px;
             height: 540px;
+            position: relative;
 
             .text {
+                position: absolute;
                 background-color: transparent;
+                display: flex;
+                align-items: start;
+                left: 35px;
+                bottom: 100px;
+
             }
         }
 

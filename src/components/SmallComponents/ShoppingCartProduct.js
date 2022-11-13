@@ -1,19 +1,17 @@
 import React, { useContext, useState } from 'react'
+import ProductContext from '../../data/productContext'
 
 const ShoppingCartProduct = ({item}) => {
   console.log(item)
 
-  const [number, setNumber] = useState(0);
-  const increase = (e) => {
-    e.preventDefault();
-    setNumber(number + 1)
+  const increaseQuantity = useContext(ProductContext).increaseQuantity
+  const decreaseQuantity = useContext(ProductContext).decreaseQuantity
 
+  const increase = () => {
+    increaseQuantity(item)
   }
-  const decrease = (e) => {
-    e.preventDefault();
-    if (number > 0)
-      setNumber(number - 1)
-
+  const decrease = () => {
+    decreaseQuantity(item)
   }
   
   return (
@@ -32,7 +30,7 @@ const ShoppingCartProduct = ({item}) => {
             <p>Quantity</p>
             <div>
               <button onClick={decrease}>-</button>
-              <span>{number}</span>
+              <span>{item.quantity}</span>
               <button onClick={increase}>+</button>
             </div>
             <p>Price: {}</p>

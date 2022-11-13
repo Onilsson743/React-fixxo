@@ -56,6 +56,9 @@ const Contact = () => {
             })
             .then(res => console.log(res));
             setCanSubmit(true);
+            
+            console.log(contactForm)
+            
         }
         
     }   
@@ -121,8 +124,8 @@ const Contact = () => {
   return (
     <div className='contact'>
         <Navbar />
-        <section className='_container'>
-            <span className='breadcrumb _containersmall'>
+        <section className='breadcrumb'>
+            <span className=' _containersmall'>
                 <a><i className="fa-solid fa-house"></i>Home</a>
                 <span>/</span>
                 <a className='active'>Contacts</a>

@@ -7,25 +7,47 @@ import ShoppingCartDetails from '../components/SmallComponents/ShoppingCartDetai
 
 const ShoppingCart = () => {
 
+  
+  
+
   const shoppingCart = useContext(ProductContext).shoppingCart
-  
+  console.log(shoppingCart)
+  let total = 0
+  shoppingCart.map(e => {
+    console.log(e.price * e.quantity)
+    
+    total = total + (e.price * e.quantity)
+  })
 
-  let TotalPrice = 0
-  shoppingCart.map(item => TotalPrice = TotalPrice + item.price)
-  
-  
+  const test = shoppingCart.length
+  let ask = false
+  if (test >= 1) {
+    ask = true
+  } else {
+    ask = false
+  }
 
+
+  
   return (
     <div>
         <Navbar />
         <div className='shopping-cart-section _container'>
           <div className='shopping-cart-products'>
             {
-              shoppingCart.map(shoppingCart => <ShoppingCartProduct key={shoppingCart.articleNumber} item={shoppingCart} />)
+              test ? (
+                shoppingCart.map(shoppingCart => <ShoppingCartProduct key={shoppingCart.articleNumber} item={shoppingCart} />)
+              ) : (<></>)
+              // shoppingCart.map(shoppingCart => <ShoppingCartProduct key={shoppingCart.articleNumber} item={shoppingCart} />)
             }          
           </div>
           <div>
-            <ShoppingCartDetails price={TotalPrice}/>
+            {
+              test ? (
+                <ShoppingCartDetails price={total}/>
+              ) : (<>Your cart i empty</>)
+            }
+            {/* <ShoppingCartDetails price={total}/> */}
           </div>
         </div>
     </div>

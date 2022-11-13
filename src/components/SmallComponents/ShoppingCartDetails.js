@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ShoppingCartDetails = ({price}) => {
-    console.log(price)
+    // console.log(price)
   return (
     <div className='shoppingcartdetails'>
         <h1>Total Price</h1>

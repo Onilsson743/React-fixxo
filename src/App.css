@@ -7,7 +7,7 @@
 }
 
 ._containersmall {
-  max-width: 1110px;
+  width: 1110px;
 }
 
 ._container {
@@ -694,6 +694,8 @@ a:hover {
     width: 426px;
     left: 50px;
     bottom: 100px;
+    align-items: start;
+    text-align: start;
   }
 }
 @media (min-width: 1700px) {
@@ -707,9 +709,15 @@ a:hover {
     background-image: url("./images/new-arrivals.svg");
     width: 635px;
     height: 540px;
+    position: relative;
   }
   .sale .new-arrivals .text {
+    position: absolute;
     background-color: transparent;
+    display: flex;
+    align-items: start;
+    left: 35px;
+    bottom: 100px;
   }
 }
 .featured-products {
@@ -1019,7 +1027,12 @@ a:hover {
 }
 
 .contact .breadcrumb {
-  padding-top: 80px;
+  padding-top: 150px;
+  padding-bottom: 35px;
+  justify-content: center;
+}
+.contact .breadcrumb ._containersmall {
+  width: 1110px;
 }
 .contact .top-navbar {
   background: white;

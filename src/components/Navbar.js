@@ -26,30 +26,6 @@ const Navbar = () => {
     setShowMenu(!showMenu);
   }
 
-
-  
-  
-  // window.addEventListener('storage', () => {
-  //   console.log("works")
-  // });
-  // window.onstorage = () => {
-  //   console.log("NewTest")
-  // }
-
-  // useEffect(() => {
-  //   const updateCart = () => {
-  //     numbers = localStorage.length
-  //     console.log("test")
-  //   }
-  //   window.addEventListener('', () => {
-  //     numbers = localStorage.length
-  //     console.log("tsting")
-  //   })
-  //   return () => {
-  //     window.removeEventListener('storage', updateCart)
-  //   }
-  // }, [])
-
   const handleClick = () => {
     // console.log(shoppingCart)
     console.log(localStorage.length)
@@ -57,15 +33,14 @@ const Navbar = () => {
     console.log("cleared")
     // console.log(localStorage)
   }
- 
-
-
 
   const shoppingCart = useContext(ProductContext).shoppingCart
-  
+  console.log(shoppingCart)
   const numbers = shoppingCart.length
- 
-  
+  let amount = 0
+  shoppingCart.map(e => {
+    amount = amount + e.quantity
+  })
   
 
   return (
@@ -85,7 +60,7 @@ const Navbar = () => {
           <IconLinks link = "/serch"  icon = "fa-regular fa-magnifying-glass" />
           <IconLinks hideMobile = {true} link = "/serch" icon = "fa-regular fa-arrows-repeat" />
           <IconLinks hideMobile = {true} link = "/serch" icon = "fa-regular fa-heart" number={"10"} />
-          <IconLinks link = "/shoppingcart" icon = "fa-regular fa-bag-shopping" number={numbers} />
+          <IconLinks link = "/shoppingcart" icon = "fa-regular fa-bag-shopping" number={amount} />
           <button className={`mobile-menu ${showMenu ? "mobile-menu-open" : ""}`} onClick={toggleMenu}></button>
         </section>
 
